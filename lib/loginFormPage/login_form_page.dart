@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_order/mainPage/view.dart';
 import 'package:my_order/userDetailsPage/user_details_page.dart';
 import 'package:my_order/widegts/app_bar.dart';
 
@@ -38,7 +39,8 @@ class LoginForm extends StatelessWidget {
                         onPressed: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                                builder: (context) => UserDetails()),
+                                builder: (context) => MainPage()
+                            ),
                           );
                         },
                         style: ElevatedButton.styleFrom(
