@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_order/constants/constants.dart';
+import 'package:my_order/loginFormPage/widgets/check_box_widget.dart';
 
-import 'loginFormCubit/loginform_cubit.dart';
+import '../loginFormCubit/loginform_cubit.dart';
 
 class LoginFormField extends StatefulWidget {
   const LoginFormField({Key? key}) : super(key: key);
@@ -94,28 +95,7 @@ class _LoginFormFieldState extends State<LoginFormField> {
                     style: TextStyle(fontSize: 13, fontWeight: FontWeight.w300),
                   ),
                 ),
-                Row(
-                  children: [
-                    Checkbox(
-                      checkColor: Colors.white,
-                      activeColor: Color(0xFFFF2873),
-                      value: controller.valuefirst,
-                      onChanged: (value) {
-                        controller.changeCheckBoxState(value);
-                      },
-                    ),
-                    Flexible(
-                      child: Text(
-                        'Yes, I want to receive offers and discounts.',
-                        maxLines: 2,
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                checkBoxWidget(controller),
               ],
             ),
           ),
@@ -123,4 +103,6 @@ class _LoginFormFieldState extends State<LoginFormField> {
       },
     );
   }
+
+
 }
