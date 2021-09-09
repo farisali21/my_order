@@ -14,7 +14,7 @@ class DrawerBody extends StatelessWidget {
             end: Alignment.bottomCenter,// 10% of the width, so there are ten blinds.
             colors: <Color>[
               Color(0xffEF4760),
-              Color(0xffE4736F)
+              Color(0xffE27971)
             ], // red to yellow
             // tileMode: TileMode.repeated, // repeats the gradient over the canvas
           ),
