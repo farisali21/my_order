@@ -6,13 +6,16 @@ import 'package:my_order/mainPage/components/main_page_body.dart';
 import 'components/drawer/controller.dart';
 import 'components/widgets/app_bar_main_page.dart';
 
+
+
 class MainPage extends StatelessWidget {
-  const MainPage({Key? key}) : super(key: key);
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: mainPageAppBar(),
+      key: _scaffoldKey,
+      appBar: mainPageAppBar((){ _scaffoldKey.currentState!.openDrawer();}),
       drawer: BlocProvider(
           create: (context) => MainDrawerController(),
           child: DrawerBody()

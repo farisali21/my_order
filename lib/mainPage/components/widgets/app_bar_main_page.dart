@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_order/mainPage/components/widgets/search_bar.dart';
 
-mainPageAppBar() => AppBar(
+mainPageAppBar(void onpressed()) => AppBar(
     backgroundColor: Colors.transparent,
     titleSpacing: 0,
     elevation: 0,
@@ -11,7 +11,7 @@ mainPageAppBar() => AppBar(
         IconButton(
           padding: EdgeInsets.zero,
           iconSize: 20,
-          onPressed: () {},
+          onPressed: onpressed,
           icon: Icon(
             Icons.menu,
             color: Colors.pink,
