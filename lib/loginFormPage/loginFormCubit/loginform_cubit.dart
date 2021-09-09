@@ -8,7 +8,7 @@ class LoginformCubit extends Cubit<LoginformState> {
   LoginformCubit() : super(LoginformInitial());
   static LoginformCubit of(context) => BlocProvider.of(context);
 
-  bool passwordVisible = false;
+  bool passwordVisible = true;
   bool valuefirst = false;
   void changePasswordState() {
     passwordVisible = !passwordVisible;

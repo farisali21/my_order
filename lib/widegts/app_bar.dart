@@ -20,7 +20,7 @@ loginAppBar(actionsList, String title, void onpressed()) => AppBar(
         style: TextStyle(
           color: Colors.black,
           fontFamily: 'OpenSans',
-          fontSize: 26.0,
+          fontSize: 23.0,
           fontWeight: FontWeight.w600,
         ),
         textAlign: TextAlign.end,

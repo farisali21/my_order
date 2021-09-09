@@ -6,15 +6,7 @@ import 'package:my_order/loginFormPage/widgets/check_box_widget.dart';
 
 import '../loginFormCubit/loginform_cubit.dart';
 
-class LoginFormField extends StatefulWidget {
-  const LoginFormField({Key? key}) : super(key: key);
-
-  @override
-  _LoginFormFieldState createState() => _LoginFormFieldState();
-}
-
-class _LoginFormFieldState extends State<LoginFormField> {
-  bool valuefirst = false;
+class LoginFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<LoginformCubit, LoginformState>(
@@ -81,8 +73,8 @@ class _LoginFormFieldState extends State<LoginFormField> {
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Text(
-                          controller.passwordVisible ? 'hide' : 'show',
-                          style: TextStyle(fontSize: 18, color: Colors.pink),
+                          controller.passwordVisible ? 'show' : 'hide',
+                          style: TextStyle(fontSize: 14, color: Colors.pink),
                         ),
                       ),
                     ),
@@ -103,6 +95,4 @@ class _LoginFormFieldState extends State<LoginFormField> {
       },
     );
   }
-
-
 }
