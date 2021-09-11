@@ -11,30 +11,30 @@ class CheckoutSecondPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: checkOutAppBar('Check out'),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          TapBarCheckout(),
-          Container(
-            padding: EdgeInsets.all(8.0),
-            width: double.infinity,
-            child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: defaultColor, padding: EdgeInsets.all(10.0)),
-                onPressed: () {},
-                child: Text(
-                  'Finish Order',
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
-                )),
-          ),
-          Expanded(
-            child: SizedBox(
-              height: 10,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            TapBarCheckout(),
+            Container(
+              padding: EdgeInsets.all(8.0),
+              width: double.infinity,
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      primary: defaultColor, padding: EdgeInsets.all(10.0)),
+                  onPressed: () {},
+                  child: Text(
+                    'Finish Order',
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  )),
             ),
-          )
-        ],
+            SizedBox(
+              height: 30,
+            )
+          ],
+        ),
       ),
     );
   }

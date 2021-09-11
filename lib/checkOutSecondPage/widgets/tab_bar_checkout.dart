@@ -9,7 +9,8 @@ class TapBarCheckout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return Container(
+      height: MediaQuery.of(context).size.height / 1.5,
       child: DefaultTabController(
           length: 2,
           child: Column(
