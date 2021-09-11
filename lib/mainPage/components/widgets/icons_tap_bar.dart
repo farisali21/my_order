@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_order/constants/constants.dart';
+import 'package:my_order/fastDelivery/pages/fast_delivery_page.dart';
 
 class IconsTapBar extends StatelessWidget {
   const IconsTapBar({
@@ -15,7 +16,10 @@ class IconsTapBar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            elevatedButtonMainPage('Food', () {}, Icons.fastfood),
+            elevatedButtonMainPage('Food', () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => FastDeliveryPage()));
+            }, Icons.fastfood),
             SizedBox(width: 6),
             elevatedButtonMainPage('Gronveries', () {}, Icons.fastfood),
             SizedBox(width: 6),

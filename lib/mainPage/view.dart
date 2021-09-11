@@ -6,8 +6,6 @@ import 'package:my_order/mainPage/components/main_page_body.dart';
 import 'components/drawer/controller.dart';
 import 'components/widgets/app_bar_main_page.dart';
 
-
-
 class MainPage extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
@@ -15,11 +13,13 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      appBar: mainPageAppBar((){ _scaffoldKey.currentState!.openDrawer();}),
+      appBar: mainPageAppBar(() {
+        _scaffoldKey.currentState!.openDrawer();
+      }),
       drawer: BlocProvider(
-          create: (context) => MainDrawerController(),
-          child: DrawerBody()
-      ) ,
+        create: (context) => MainDrawerController(),
+        child: DrawerBody(),
+      ),
       body: MainPageBody(),
     );
   }

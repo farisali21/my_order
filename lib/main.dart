@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:my_order/addOrderToCart/order_page.dart';
+import 'package:my_order/checkOutOrderPage/check_out_page.dart';
+import 'package:my_order/checkOutSecondPage/checkout_scond_page.dart';
+import 'package:my_order/checkoutFirstPage/check_out_first_page.dart';
+import 'package:my_order/resturantDetailsPage/resturant_details_page.dart';
 import 'package:my_order/splashScreen/view.dart';
 
 import 'loginFormPage/login_form_page.dart';

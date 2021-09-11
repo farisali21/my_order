@@ -2,6 +2,7 @@ import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:my_order/constants/constants.dart';
 import 'package:my_order/fastDelivery/pages/all_resturants.dart';
+import 'package:my_order/resturantDetailsPage/resturant_details_page.dart';
 
 class ButtonsTapBarFastDelivery extends StatelessWidget {
   @override
@@ -9,7 +10,7 @@ class ButtonsTapBarFastDelivery extends StatelessWidget {
     return DefaultTabController(
       length: 5,
       child: Column(
-        children: <Widget>[
+        children: [
           ButtonsTabBar(
             backgroundColor: defaultColor,
             unselectedBackgroundColor: Colors.pink[200],
@@ -56,6 +57,20 @@ class ButtonsTapBarFastDelivery extends StatelessWidget {
                   child: Icon(Icons.directions_car),
                 ),
               ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(6.0),
+            width: MediaQuery.of(context).size.width / 1.15,
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => RestaurantDetailsPage()));
+              },
+              child: Text('View all resturant'),
+              style: ElevatedButton.styleFrom(
+                primary: defaultColor,
+              ),
             ),
           ),
         ],

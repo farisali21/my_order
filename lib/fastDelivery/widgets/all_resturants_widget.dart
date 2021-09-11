@@ -20,28 +20,10 @@ class AllResturantsWidget extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          Container(
-            height: MediaQuery.of(context).size.height / 2.5,
-            child: ListView(
-              children: [
-                ResturantContainer(),
-                ResturantContainer(),
-                ResturantContainer(),
-                ResturantContainer(),
-              ],
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.all(10.0),
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text('View all resturant'),
-              style: ElevatedButton.styleFrom(
-                primary: defaultColor,
-              ),
-            ),
-          ),
+          ResturantContainer(),
+          ResturantContainer(),
+          ResturantContainer(),
+          ResturantContainer(),
         ],
       ),
     );
