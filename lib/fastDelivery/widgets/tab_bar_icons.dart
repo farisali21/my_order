@@ -12,7 +12,7 @@ class ButtonsTapBarFastDelivery extends StatelessWidget {
       child: Column(
         children: [
           ButtonsTabBar(
-            backgroundColor: defaultColor,
+            backgroundColor: kPrimaryColor,
             unselectedBackgroundColor: Colors.pink[200],
             unselectedLabelStyle: TextStyle(color: Colors.white),
             labelStyle:

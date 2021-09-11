@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:my_order/mainPage/view.dart';
 import '../widegts/app_bar.dart';
 import 'userDetailsCubit/userdetails_cubit.dart';
 import 'widgets/image_picker_widget.dart';
 import 'widgets/user_details_form_widget.dart';
 
-class UserDetails extends StatefulWidget {
-  const UserDetails({Key? key}) : super(key: key);
+class UserDetails extends StatelessWidget {
 
-  @override
-  _UserDetailsState createState() => _UserDetailsState();
-}
-
-class _UserDetailsState extends State<UserDetails> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -21,7 +15,13 @@ class _UserDetailsState extends State<UserDetails> {
       child: BlocBuilder<UserdetailsCubit, UserdetailsState>(
         builder: (context, state) {
           final controller = UserdetailsCubit.of(context);
-          return Scaffold(
+          Future<bool> onBack(){
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MainPage()));
+            return new Future.value(true);
+          }
+          return WillPopScope(
+              onWillPop:onBack ,
+              child: Scaffold(
             appBar: loginAppBar([
               GestureDetector(
                 onTap: () {},
@@ -39,7 +39,9 @@ class _UserDetailsState extends State<UserDetails> {
                   ),
                 ),
               ),
-            ], 'User details', () {}),
+            ], 'User details', () {
+              Navigator.pop(context);
+            }),
             body: SingleChildScrollView(
               child: Column(
                 children: [
@@ -55,7 +57,8 @@ class _UserDetailsState extends State<UserDetails> {
                         style: TextStyle(fontSize: 20),
                       ),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                        },
                         icon: Icon(Icons.edit),
                       )
                     ],
@@ -64,7 +67,7 @@ class _UserDetailsState extends State<UserDetails> {
                 ],
               ),
             ),
-          );
+          ));
         },
       ),
     );

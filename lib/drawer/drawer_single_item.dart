@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_order/mainPage/components/drawer/controller.dart';
+import 'controller.dart';
 
 class DrawerSingleItem extends StatelessWidget {
   final icon;
@@ -12,11 +12,6 @@ class DrawerSingleItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var controller = MainDrawerController.of(context);
-
-    return BlocBuilder(
-        bloc: controller,
-        builder: (context,state)
-        {
             return Container(
               margin: EdgeInsets.only(right: 15),
               decoration:  controller.currentIndex== index ? BoxDecoration(
@@ -30,7 +25,6 @@ class DrawerSingleItem extends StatelessWidget {
 
               ),
             );
-        }
-    );
+
   }
 }

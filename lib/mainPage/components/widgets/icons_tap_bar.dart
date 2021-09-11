@@ -36,7 +36,7 @@ class IconsTapBar extends StatelessWidget {
   ElevatedButton elevatedButtonMainPage(title, onpressed(), icon) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        primary: defaultColor,
+        primary: kPrimaryColor,
       ),
       onPressed: onpressed,
       child: Row(

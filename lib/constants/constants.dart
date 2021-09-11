@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-
-const Color defaultColor = Color(0xffFB4E68);
-const Color secondaryColor = Color(0xffFB4E68);
-Color kPrimaryColor = Color(0xFFEF4760);
+const Color kPrimaryColor = Color(0xffEF4760);
+const Color defaultColor = Color(0xffEF4760);
+const Color kSecondaryColor = Color(0xffF591A0);
+var kBoxDecoration = BoxDecoration(
+    borderRadius: BorderRadius.circular(10),
+    border: Border.all(color: kPrimaryColor, width: 1));
 const kTextFieldDecoration = InputDecoration(
   hintText: 'Enter a Value',
   contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
