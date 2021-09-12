@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'addOrderToCart/order_page.dart';
 import 'splashScreen/view.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+      home: AddOrderPage(),
     );
   }
 }

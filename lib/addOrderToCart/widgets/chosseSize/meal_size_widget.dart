@@ -4,7 +4,10 @@ import 'package:my_order/addOrderToCart/cubit/additem_cubit.dart';
 import 'package:my_order/constants/constants.dart';
 
 class MealSize extends StatelessWidget {
-  const MealSize({Key? key}) : super(key: key);
+  final String title;
+  final String price;
+  const MealSize({Key? key, required this.title, required this.price})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,13 +42,13 @@ class MealSize extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'Large',
+                    title,
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                   ),
                 ],
               ),
               Text(
-                '20EGP',
+                '$price EGP',
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,

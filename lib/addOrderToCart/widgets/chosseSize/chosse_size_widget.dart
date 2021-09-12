@@ -2,7 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:my_order/addOrderToCart/widgets/chosseSize/meal_size_widget.dart';
 
 class ChosseSize extends StatelessWidget {
-  const ChosseSize({Key? key}) : super(key: key);
+  final List<Map<String, dynamic>> chosseSize = [
+    {
+      'title': 'Large',
+      'price': 99,
+    },
+    {
+      'title': 'mediam',
+      'price': 99,
+    },
+    {
+      'title': 'small',
+      'price': 99,
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -21,16 +34,19 @@ class ChosseSize extends StatelessWidget {
         ),
         Container(
           width: MediaQuery.of(context).size.width / 1.08,
-          height: 140,
           decoration: BoxDecoration(
               border: Border.all(
                 color: Colors.grey,
                 width: 1,
               ),
               borderRadius: BorderRadius.circular(10)),
-          child: ListView.builder(
-            itemCount: 3,
-            itemBuilder: (context, index) => MealSize(),
+          child: Column(
+            children: [
+              ...chosseSize.map((size) => MealSize(
+                    title: size['title'].toString(),
+                    price: size['price'].toString(),
+                  ))
+            ],
           ),
         ),
       ],
