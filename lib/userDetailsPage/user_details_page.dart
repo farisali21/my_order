@@ -40,7 +40,10 @@ class UserDetails extends StatelessWidget {
                 ),
               ),
             ], 'User details', () {
-              Navigator.pop(context);
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => MainPage()),
+              );
             }),
             body: SingleChildScrollView(
               child: Column(
