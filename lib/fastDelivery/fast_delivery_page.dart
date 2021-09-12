@@ -8,7 +8,7 @@ class FastDeliveryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: fastDeliveryAppBar(),
+      appBar: fastDeliveryAppBar(context),
       body: ButtonsTapBarFastDelivery(),
     );
   }

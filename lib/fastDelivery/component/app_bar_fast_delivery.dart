@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_order/constants/constants.dart';
 import 'package:my_order/mainPage/components/widgets/search_bar.dart';
 
-fastDeliveryAppBar() => AppBar(
+fastDeliveryAppBar(context) => AppBar(
     backgroundColor: Colors.transparent,
     titleSpacing: 0,
     elevation: 0,
@@ -12,7 +12,9 @@ fastDeliveryAppBar() => AppBar(
         IconButton(
           padding: EdgeInsets.zero,
           iconSize: 20,
-          onPressed: (){},
+          onPressed: (){
+            Navigator.of(context).pop();
+          },
           icon: Icon(
             Icons.arrow_back,
             color: Colors.black,

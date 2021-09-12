@@ -13,7 +13,7 @@ class RestaurantDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: restaurantDetails(),
+      appBar: restaurantDetails(context),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(

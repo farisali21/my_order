@@ -10,7 +10,7 @@ class CheckOutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: checkOutAppBar('Orders'),
+      appBar: checkOutAppBar('Orders', context),
       body: SingleChildScrollView(
         child: SingleChildScrollView(
           child: Column(

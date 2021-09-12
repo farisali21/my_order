@@ -17,7 +17,7 @@ class AddOrderPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: restaurantDetails(),
+      appBar: restaurantDetails(context),
       body: BlocProvider(
         create: (context) => AdditemCubit(),
         child: Padding(

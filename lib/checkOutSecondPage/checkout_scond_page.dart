@@ -10,7 +10,7 @@ class CheckoutSecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: checkOutAppBar('Check out'),
+      appBar: checkOutAppBar('Check out', context),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
