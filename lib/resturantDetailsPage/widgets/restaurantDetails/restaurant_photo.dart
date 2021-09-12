@@ -13,6 +13,8 @@ class RestaurantPhoto extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
       ),
       child: Image(
+        width: double.infinity,
+        height: 150,
         image: AssetImage('assets/images/offer.png'),
         fit: BoxFit.fill,
       ),

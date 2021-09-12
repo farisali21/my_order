@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_order/chooseLocation/components/appBarComponents/appBar_search.dart';
 import 'package:my_order/chooseLocation/components/appBarComponents/return_button.dart';
 import 'package:my_order/chooseLocation/controller.dart';
-import 'package:my_order/fastDelivery/pages/fast_delivery_page.dart';
+import 'package:my_order/fastDelivery/fast_delivery_page.dart';
 import 'package:my_order/mainPage/view.dart';
 import 'package:my_order/network.dart';
 import 'choose_location_body.dart';

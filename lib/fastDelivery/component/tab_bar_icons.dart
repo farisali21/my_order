@@ -1,8 +1,9 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:my_order/constants/constants.dart';
-import 'package:my_order/fastDelivery/pages/all_resturants.dart';
-import 'package:my_order/resturantDetailsPage/resturant_details_page.dart';
+import 'package:my_order/fastDelivery/component/all_resturants.dart';
+
+import 'view_all_restaurant_button.dart';
 
 class ButtonsTapBarFastDelivery extends StatelessWidget {
   @override
@@ -59,20 +60,7 @@ class ButtonsTapBarFastDelivery extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            margin: EdgeInsets.all(6.0),
-            width: MediaQuery.of(context).size.width / 1.15,
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => RestaurantDetailsPage()));
-              },
-              child: Text('View all resturant'),
-              style: ElevatedButton.styleFrom(
-                primary: defaultColor,
-              ),
-            ),
-          ),
+          ViewAllRestaurantButton(),
         ],
       ),
     );

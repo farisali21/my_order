@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_order/checkOutOrderPage/widgets/app_bar_check_out.dart';
+import 'package:my_order/checkOutOrderPage/widgets/components/app_bar_check_out.dart';
 import 'package:my_order/constants/constants.dart';
 
 import 'widgets/tab_bar_checkout.dart';

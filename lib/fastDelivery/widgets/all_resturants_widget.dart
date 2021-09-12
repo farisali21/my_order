@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_order/constants/constants.dart';
 import 'package:my_order/fastDelivery/widgets/resturant_container.dart';
 
 class AllResturantsWidget extends StatelessWidget {

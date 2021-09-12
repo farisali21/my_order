@@ -10,7 +10,8 @@ class OrderDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 6),
-      height: MediaQuery.of(context).size.height / 4.5,
+      padding: EdgeInsets.only(bottom: 8),
+      // height: 100,
       width: double.infinity,
       decoration: BoxDecoration(
         border: Border.all(

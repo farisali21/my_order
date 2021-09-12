@@ -15,7 +15,7 @@ class RestaurantDetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: restaurantDetails(),
       body: Padding(
-        padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
             RestaurantPhoto(),

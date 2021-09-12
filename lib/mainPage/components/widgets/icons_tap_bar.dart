@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_order/constants/constants.dart';
-import 'package:my_order/fastDelivery/pages/fast_delivery_page.dart';
+import 'package:my_order/fastDelivery/fast_delivery_page.dart';
 
 class IconsTapBar extends StatelessWidget {
   const IconsTapBar({
@@ -20,35 +20,35 @@ class IconsTapBar extends StatelessWidget {
               Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) => FastDeliveryPage()));
             }, Icons.fastfood),
-            SizedBox(width: 6),
             elevatedButtonMainPage('Gronveries', () {}, Icons.fastfood),
-            SizedBox(width: 6),
             elevatedButtonMainPage('Sweets', () {}, Icons.fastfood),
-            SizedBox(width: 6),
             elevatedButtonMainPage('Drinks', () {}, Icons.fastfood),
-            SizedBox(width: 6),
           ],
         ),
       ),
     );
   }
 
-  ElevatedButton elevatedButtonMainPage(title, onpressed(), icon) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        primary: kPrimaryColor,
-      ),
-      onPressed: onpressed,
-      child: Row(
-        children: [
-          Icon(icon),
-          SizedBox(
-            width: 2,
-          ),
-          Text(
-            title,
-          ),
-        ],
+  Widget elevatedButtonMainPage(title, onpressed(), icon) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 4, right: 4),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          primary: kPrimaryColor,
+          padding: EdgeInsets.all(6),
+        ),
+        onPressed: onpressed,
+        child: Row(
+          children: [
+            Icon(icon),
+            SizedBox(
+              width: 2,
+            ),
+            Text(
+              title,
+            ),
+          ],
+        ),
       ),
     );
   }

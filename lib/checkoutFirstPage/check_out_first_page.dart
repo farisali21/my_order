@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_order/checkOutOrderPage/widgets/app_bar_check_out.dart';
+import 'package:my_order/checkOutOrderPage/widgets/components/app_bar_check_out.dart';
+import 'package:my_order/checkOutSecondPage/checkout_scond_page.dart';
 import 'package:my_order/checkoutFirstPage/text_form_field_checkout.dart';
 import 'package:my_order/constants/constants.dart';
 import 'package:my_order/userDetailsPage/widgets/text_form_field_user_details.dart';
@@ -45,7 +46,10 @@ class CheckoutFirstPage extends StatelessWidget {
                             primary: defaultColor,
                             padding: const EdgeInsets.all(10.0),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => CheckoutSecondPage()));
+                          },
                           child: Text(
                             'Next',
                             style: TextStyle(fontSize: 18),

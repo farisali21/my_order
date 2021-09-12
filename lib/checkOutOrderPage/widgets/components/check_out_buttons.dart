@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_order/checkOutSecondPage/checkout_scond_page.dart';
+import 'package:my_order/checkoutFirstPage/check_out_first_page.dart';
 import 'package:my_order/constants/constants.dart';
 
 class CheckOutButtons extends StatelessWidget {
@@ -14,7 +15,7 @@ class CheckOutButtons extends StatelessWidget {
         children: [
           checkOutButton('Check out', () {
             Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => CheckoutSecondPage()));
+                MaterialPageRoute(builder: (context) => CheckoutFirstPage()));
           }),
           checkOutButton('Add Item', () {}),
         ],
