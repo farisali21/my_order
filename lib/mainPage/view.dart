@@ -42,7 +42,7 @@ class MainPage extends StatelessWidget {
           key: _scaffoldKey,
           appBar: mainPageAppBar(() {
             _scaffoldKey.currentState!.openDrawer();
-          }),
+          }, context),
           drawer: DrawerBody(
             index: 0,
           ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_order/mainPage/components/widgets/search_bar.dart';
 
-mainPageAppBar(void onpressed()) => AppBar(
+mainPageAppBar(void onpressed(), context) => AppBar(
     backgroundColor: Colors.transparent,
     titleSpacing: 0,
     elevation: 0,
@@ -18,11 +17,34 @@ mainPageAppBar(void onpressed()) => AppBar(
             size: 30,
           ),
         ),
-        Expanded(
-          child: SearchWidget(
-            hintText: 'what are u looking for?',
-            text: '',
-            onChanged: (_) {},
+        InkWell(
+          hoverColor: Colors.white,
+          onTap: () {},
+          child: Container(
+            padding: EdgeInsets.all(4),
+            margin: EdgeInsets.all(6),
+            width: MediaQuery.of(context).size.width * 0.5,
+            decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.pink,
+                  width: 1,
+                ),
+                borderRadius: BorderRadius.circular(10)),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.search,
+                  color: Colors.black,
+                ),
+                Flexible(
+                  child: Text(
+                    'what are you looking for?',
+                    overflow: TextOverflow.fade,
+                    style: TextStyle(fontSize: 12, color: Colors.black),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
         Text(
