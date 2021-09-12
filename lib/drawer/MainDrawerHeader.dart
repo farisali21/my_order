@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_order/checkOutOrderPage/check_out_page.dart';
 import 'package:my_order/settings/view.dart';
+
 class MainDrawerHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -7,10 +9,18 @@ class MainDrawerHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Icon(
-          Icons.shopping_cart,
-          size: 30,
-          color: Colors.white,
+        IconButton(
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => CheckOutPage()),
+            );
+          },
+          icon: Icon(
+            Icons.shopping_cart,
+            size: 30,
+            color: Colors.white,
+          ),
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,

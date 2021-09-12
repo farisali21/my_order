@@ -14,7 +14,7 @@ import 'package:my_order/yourOrders/view.dart';
 import '../../../chooseLocation/view.dart';
 
 class DrawerItems extends StatelessWidget {
-  List<dynamic> pages =[MainPage(),UserDetails(),ChooseLocation(),YourOrders(),OffersPage(),NotificationsPage(),NotificationsPage(),VouchersPage()];
+  List<dynamic> pages =[MainPage(),UserDetails(),ChooseLocation(),YourOrders(),OffersPage(),NotificationsPage(),MainPage(),VouchersPage(),MainPage(),MainPage(),MainPage()];
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class DrawerItems extends StatelessWidget {
           var selected = drawerItemsDetails[index];
           return DrawerSingleItem(
             ontap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => pages[index]),
               );
