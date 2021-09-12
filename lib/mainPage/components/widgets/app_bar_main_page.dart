@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_order/mainPage/components/widgets/search_bar.dart';
-
+import 'package:my_order/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 mainPageAppBar(void onpressed()) => AppBar(
     backgroundColor: Colors.transparent,
     titleSpacing: 0,
@@ -20,7 +21,7 @@ mainPageAppBar(void onpressed()) => AppBar(
         ),
         Expanded(
           child: SearchWidget(
-            hintText: 'what are u looking for?',
+            hintText: LocaleKeys.main_search_text.tr(),
             text: '',
             onChanged: (_) {},
           ),
