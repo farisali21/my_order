@@ -23,7 +23,8 @@ class OrderDetails extends StatelessWidget {
       child: Column(
         children: [
           Material(
-            // elevation: 4,
+            elevation: 4,
+            borderRadius: BorderRadius.circular(70),
             child: Container(
               padding: EdgeInsets.all(6),
               width: MediaQuery.of(context).size.width / 1.1,
@@ -40,6 +41,7 @@ class OrderDetails extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(height: 8),
           OrderDetailsWidget(
             title: 'special service: ',
             price: '10EGP',

@@ -1,5 +1,6 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_order/constants/constants.dart';
 import 'package:my_order/fastDelivery/component/all_resturants.dart';
 
@@ -24,11 +25,11 @@ class ButtonsTapBarFastDelivery extends StatelessWidget {
                 text: "All  ",
               ),
               Tab(
-                icon: Icon(Icons.fastfood),
+                icon: FaIcon(FontAwesomeIcons.cheese),
                 text: "crepe  ",
               ),
               Tab(
-                icon: Icon(Icons.local_pizza),
+                icon: FaIcon(FontAwesomeIcons.pizzaSlice),
                 text: "Pizza",
               ),
               Tab(
@@ -36,7 +37,7 @@ class ButtonsTapBarFastDelivery extends StatelessWidget {
                 text: "sweets  ",
               ),
               Tab(
-                icon: Icon(Icons.fastfood_outlined),
+                icon: FaIcon(FontAwesomeIcons.hamburger),
                 text: "sandwitch",
               ),
             ],

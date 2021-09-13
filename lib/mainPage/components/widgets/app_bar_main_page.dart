@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_order/constants/constants.dart';
 
 mainPageAppBar(void onpressed(), context) => AppBar(
     backgroundColor: Colors.transparent,
@@ -26,7 +28,7 @@ mainPageAppBar(void onpressed(), context) => AppBar(
             width: MediaQuery.of(context).size.width * 0.5,
             decoration: BoxDecoration(
                 border: Border.all(
-                  color: Colors.pink,
+                  color: defaultColor,
                   width: 1,
                 ),
                 borderRadius: BorderRadius.circular(10)),
@@ -40,8 +42,18 @@ mainPageAppBar(void onpressed(), context) => AppBar(
                   child: Text(
                     'what are you looking for?',
                     overflow: TextOverflow.fade,
-                    style: TextStyle(fontSize: 12, color: Colors.black),
+                    style: TextStyle(
+                      fontSize: 11,
+                      color: Colors.black26,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
+                ),
+                const SizedBox(width: 2),
+                FaIcon(
+                  FontAwesomeIcons.filter,
+                  size: 16,
+                  color: defaultColor,
                 ),
               ],
             ),

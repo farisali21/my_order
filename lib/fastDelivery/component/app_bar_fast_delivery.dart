@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_order/constants/constants.dart';
 import 'package:my_order/mainPage/components/widgets/search_bar.dart';
 
@@ -12,7 +13,7 @@ fastDeliveryAppBar(context) => AppBar(
         IconButton(
           padding: EdgeInsets.zero,
           iconSize: 20,
-          onPressed: (){
+          onPressed: () {
             Navigator.of(context).pop();
           },
           icon: Icon(
@@ -21,11 +22,44 @@ fastDeliveryAppBar(context) => AppBar(
             size: 30,
           ),
         ),
-        Expanded(
-          child: SearchWidget(
-            hintText: 'what are u looking for?',
-            text: '',
-            onChanged: (_) {},
+        InkWell(
+          hoverColor: Colors.white,
+          onTap: () {},
+          child: Container(
+            padding: EdgeInsets.all(4),
+            margin: EdgeInsets.all(6),
+            width: MediaQuery.of(context).size.width * 0.5,
+            decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.pink,
+                  width: 1,
+                ),
+                borderRadius: BorderRadius.circular(10)),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.search,
+                  color: Colors.black,
+                ),
+                Flexible(
+                  child: Text(
+                    'what are you looking for?',
+                    overflow: TextOverflow.fade,
+                    style: TextStyle(
+                      fontSize: 11,
+                      color: Colors.black26,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 2),
+                FaIcon(
+                  FontAwesomeIcons.filter,
+                  size: 16,
+                  color: defaultColor,
+                ),
+              ],
+            ),
           ),
         ),
         Text(

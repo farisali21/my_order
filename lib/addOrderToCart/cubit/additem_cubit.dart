@@ -1,9 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:my_order/constants/constants.dart';
 
 part 'additem_state.dart';
 
@@ -11,7 +9,8 @@ class AdditemCubit extends Cubit<AdditemState> {
   AdditemCubit() : super(AdditemInitial());
   static AdditemCubit of(context) => BlocProvider.of(context);
   int counter = 1;
-  bool colorBoolOfChosseSize = false;
+  int currentIndexOfChosseSize = -1;
+  int currentIndexOfChosseExtras = -1;
   bool colorBoolOfChosseExtra = false;
 
   void addItem() {
@@ -20,17 +19,25 @@ class AdditemCubit extends Cubit<AdditemState> {
   }
 
   void removeItem() {
+    if (counter <= 1) {
+      return;
+    }
     counter--;
-    emit(AdditemRebuild());
-  }
-
-  void changeColorOfChosseSize() {
-    colorBoolOfChosseSize = !colorBoolOfChosseSize;
     emit(AdditemRebuild());
   }
 
   void changeColorOfChosseExtra() {
     colorBoolOfChosseExtra = !colorBoolOfChosseExtra;
+    emit(AdditemRebuild());
+  }
+
+  void setIndexOfChosseSize(int index) {
+    currentIndexOfChosseSize = index;
+    emit(AdditemRebuild());
+  }
+
+  void setIndexOfChosseExtras(int index) {
+    currentIndexOfChosseExtras = index;
     emit(AdditemRebuild());
   }
 }

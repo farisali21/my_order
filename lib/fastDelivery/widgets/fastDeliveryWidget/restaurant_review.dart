@@ -3,15 +3,12 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:my_order/constants/constants.dart';
 
 class RestaurantReview extends StatelessWidget {
-  const RestaurantReview({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       children: [
         RatingBar.builder(
-          glowColor: defaultColor,
-          itemSize: 15,
+          itemSize: 12,
           initialRating: 5,
           minRating: 1,
           direction: Axis.horizontal,
@@ -26,34 +23,22 @@ class RestaurantReview extends StatelessWidget {
             print(rating);
           },
         ),
+        const SizedBox(width: 20),
         Row(
           children: [
-            SizedBox(height: 10),
-            textReview('Info'),
-            Text(
-              ' | ',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey,
-                fontWeight: FontWeight.w700,
-              ),
+            Icon(
+              Icons.timer,
+              size: 10.0,
             ),
-            textReview('Reviews'),
+            Text(
+              'within 24 mins',
+              style: TextStyle(
+                fontSize: 10.0,
+              ),
+            )
           ],
         ),
       ],
-    );
-  }
-
-  Text textReview(title) {
-    return Text(
-      title,
-      style: TextStyle(
-        decoration: TextDecoration.underline,
-        fontSize: 15,
-        color: defaultColor,
-        fontWeight: FontWeight.w700,
-      ),
     );
   }
 }

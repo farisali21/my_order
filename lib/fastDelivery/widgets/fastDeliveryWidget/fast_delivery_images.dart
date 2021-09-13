@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_order/mainPage/components/widgets/specialOffer/special_offer_item.dart';
 
+import 'fast_delivery_offer.dart';
+
 class FastFoodImages extends StatelessWidget {
   const FastFoodImages({Key? key}) : super(key: key);
 
@@ -13,13 +15,13 @@ class FastFoodImages extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SpecialOfferItem(
+            FastDeiveryOffer(
               imageUrl: 'assets/images/check.png',
               title: 'Shawerma Snadwitch',
               deliveryPrice: 'Delivery Egp 15',
               foodType: 'Shawerma snadwitch',
             ),
-            SpecialOfferItem(
+            FastDeiveryOffer(
               imageUrl: 'assets/images/pizza.png',
               title: 'Pizza Margerita',
               deliveryPrice: 'Delivery Egp 30',

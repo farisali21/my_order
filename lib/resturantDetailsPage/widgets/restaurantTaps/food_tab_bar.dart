@@ -10,13 +10,14 @@ class FoodTapBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: DefaultTabController(
-          length: 3,
+          length: 4,
           child: Column(
             children: [
               TabBar(
                 indicatorWeight: 5,
                 indicatorColor: defaultColor,
                 indicatorSize: TabBarIndicatorSize.label,
+                isScrollable: true,
                 tabs: [
                   Tab(
                     child: Text(
@@ -38,6 +39,15 @@ class FoodTapBar extends StatelessWidget {
                   ),
                   Tab(
                     child: Text(
+                      'Chinkens',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                  Tab(
+                    child: Text(
                       'All',
                       style: TextStyle(
                           color: Colors.black,
@@ -51,6 +61,9 @@ class FoodTapBar extends StatelessWidget {
                 child: TabBarView(
                   children: <Widget>[
                     MealsContainer(),
+                    Center(
+                      child: Icon(Icons.directions_transit),
+                    ),
                     Center(
                       child: Icon(Icons.directions_transit),
                     ),

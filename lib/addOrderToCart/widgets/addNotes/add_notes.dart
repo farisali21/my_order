@@ -24,7 +24,7 @@ class AddNotes extends StatelessWidget {
                   width: 1,
                 ),
                 borderRadius: BorderRadius.circular(10)),
-            width: MediaQuery.of(context).size.width,
+            width: double.infinity,
             height: 80,
             child: Padding(
               padding: const EdgeInsets.all(5.0),

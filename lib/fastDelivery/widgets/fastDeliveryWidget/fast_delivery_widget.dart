@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_order/fastDelivery/widgets/fast_delivery_images.dart';
+import 'package:my_order/fastDelivery/widgets/fastDeliveryWidget/fast_delivery_images.dart';
 
 class FastDelivery extends StatelessWidget {
   const FastDelivery({Key? key}) : super(key: key);

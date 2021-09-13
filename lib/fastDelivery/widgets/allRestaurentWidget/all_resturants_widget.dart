@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_order/fastDelivery/widgets/resturant_container.dart';
+import 'package:my_order/fastDelivery/widgets/allRestaurentWidget/resturant_container.dart';
 
 class AllResturantsWidget extends StatelessWidget {
   const AllResturantsWidget({Key? key}) : super(key: key);
