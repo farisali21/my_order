@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:my_order/constants/constants.dart';
+import 'package:my_order/info/components/rating.dart';
 
-class ListViewRow1 extends StatelessWidget {
+class RowInfo extends StatelessWidget {
   final leftWidget;
   final rightWidget;
-  ListViewRow1({this.leftWidget,this.rightWidget});
+  RowInfo({this.rightWidget,this.leftWidget});
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80,
-      padding: EdgeInsets.symmetric(vertical: 10,horizontal: 40),
+      padding: EdgeInsets.all(26),
       decoration: BoxDecoration(
-        border: Border(bottom: BorderSide(color: kPrimaryColor,width: 1))
+        border: Border(bottom: BorderSide(color: kPrimaryColor,width: 1,)),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

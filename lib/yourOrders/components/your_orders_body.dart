@@ -14,24 +14,42 @@ class YourOrdersBody extends StatelessWidget {
     return BlocBuilder(
         bloc: controller,
         builder: (context, state) {
-          return ListView(
+          return Column(
             children: [
-              OrdersButtonRow(),
-              ...controller.activeButton
-                  ? recentOrders.map((order) => OrderCard(
-                        restaurantName: order['restaurant_name'],
-                        price: order['price'],
-                        address: order['address'],
-                        date: order['date'],
-                        mealName: order['meal_name'],
-                      ))
-                  : oldOrders.map((order) => OrderCard(
-                        restaurantName: order['restaurant_name'],
-                        price: order['price'],
-                        address: order['address'],
-                        date: order['date'],
-                        mealName: order['meal_name'],
-                      )),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: OrdersButtonRow(),
+              ),
+              Expanded(
+                child: TabBarView(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: ListView(
+                        children: [...recentOrders.map((order) => OrderCard(
+                          restaurantName: order['restaurant_name'],
+                          price: order['price'],
+                          address: order['address'],
+                          date: order['date'],
+                          mealName: order['meal_name'],
+                        ))],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: ListView(
+                        children: [...oldOrders.map((order) => OrderCard(
+                          restaurantName: order['restaurant_name'],
+                          price: order['price'],
+                          address: order['address'],
+                          date: order['date'],
+                          mealName: order['meal_name'],
+                        ))],
+                      ),
+                    )
+                  ],
+                ),
+              ),
             ],
           );
         });

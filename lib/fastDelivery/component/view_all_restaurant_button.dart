@@ -15,7 +15,10 @@ class ViewAllRestaurantButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () {
           Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => RestaurantDetailsPage()));
+            MaterialPageRoute(
+              builder: (context) => RestaurantDetailsPage(),
+            ),
+          );
         },
         child: Text('View all resturant'),
         style: ElevatedButton.styleFrom(

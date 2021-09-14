@@ -13,14 +13,7 @@ class SwitchButton extends StatelessWidget {
       builder: (context,state)
       {return Switch(
         value: controller.isSwitched,
-        onChanged: (bool i)async {
-          controller.switchOnChange();
-          if(controller.isSwitched)
-            context.setLocale(Locale('ar'));
-          else
-            context.setLocale(Locale('en'));
-
-        },
+        onChanged: controller.switchOnChange,
         activeTrackColor: kSecondaryColor,
         activeColor: kPrimaryColor,
       );}

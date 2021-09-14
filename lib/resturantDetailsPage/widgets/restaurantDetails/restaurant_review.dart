@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:my_order/constants/constants.dart';
+import 'package:my_order/info/view.dart';
+import 'package:my_order/reviews/view.dart';
 
 class RestaurantReview extends StatelessWidget {
   const RestaurantReview({Key? key}) : super(key: key);
@@ -29,7 +31,13 @@ class RestaurantReview extends StatelessWidget {
         Row(
           children: [
             SizedBox(height: 10),
-            textReview('Info'),
+            TextButton(
+              child: textReview('Info'),
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => InfoPage(),),);
+              },
+            ),
             Text(
               ' | ',
               style: TextStyle(
@@ -38,7 +46,14 @@ class RestaurantReview extends StatelessWidget {
                 fontWeight: FontWeight.w700,
               ),
             ),
-            textReview('Reviews'),
+            TextButton(
+              child: textReview('Reviews'),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => ReviewsPage(),),);
+              },
+            ),
+
           ],
         ),
       ],
