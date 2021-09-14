@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:my_order/help/view.dart';
 import 'package:my_order/notifacations/view.dart';
 import 'package:my_order/offers/view.dart';
 import 'package:my_order/vouchers/components/vouchers_body.dart';
@@ -14,7 +15,7 @@ import 'package:my_order/yourOrders/view.dart';
 import '../../../chooseLocation/view.dart';
 
 class DrawerItems extends StatelessWidget {
-  List<dynamic> pages =[MainPage(),UserDetails(),ChooseLocation(),YourOrders(),OffersPage(),NotificationsPage(),MainPage(),VouchersPage(),MainPage(),MainPage(),MainPage()];
+  List<dynamic> pages =[MainPage(),UserDetails(),ChooseLocation(),YourOrders(),OffersPage(),NotificationsPage(),MainPage(),VouchersPage(),HelpPage(),MainPage(),MainPage()];
 
   @override
   Widget build(BuildContext context) {

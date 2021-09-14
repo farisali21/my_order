@@ -18,26 +18,26 @@ class YourOrdersScaffold extends StatelessWidget {
     }
     return WillPopScope(
       onWillPop:onBack ,
-      child: Scaffold(
-        key: _scaffoldKey,
-        appBar: drawerAppBar(
-            IconButton(
-                onPressed: () {
-                  _scaffoldKey.currentState!.openDrawer();
-                },
-                icon: Icon(
-                  Icons.menu,
-                  color: kPrimaryColor,
-                  size: 35,
-                )),
-            'Orders'),
-        body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: BlocProvider(
+      child: DefaultTabController(
+        length: 2,
+        child: Scaffold(
+          key: _scaffoldKey,
+          appBar: drawerAppBar(
+              IconButton(
+                  onPressed: () {
+                    _scaffoldKey.currentState!.openDrawer();
+                  },
+                  icon: Icon(
+                    Icons.menu,
+                    color: kPrimaryColor,
+                    size: 35,
+                  )),
+              'Orders'),
+          body: BlocProvider(
               create: (context) => YourOrdersController(),
               child: YourOrdersBody()),
+          drawer: DrawerBody(index: 3,),
         ),
-        drawer: DrawerBody(index: 3,),
       ),
     );
   }

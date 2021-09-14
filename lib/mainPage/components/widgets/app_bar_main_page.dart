@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_order/constants/constants.dart';
+import 'package:my_order/cuisinesFilters/cuisines_filters_page.dart';
 import 'package:my_order/searchPage/search_page.dart';
 
 mainPageAppBar(void onpressed(), context) => AppBar(
@@ -54,10 +55,18 @@ mainPageAppBar(void onpressed(), context) => AppBar(
                   ),
                 ),
                 const SizedBox(width: 2),
-                FaIcon(
-                  FontAwesomeIcons.filter,
-                  size: 16,
-                  color: defaultColor,
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                          builder: (context) => CuisinesFiltersPage()),
+                    );
+                  },
+                  child: FaIcon(
+                    FontAwesomeIcons.filter,
+                    size: 16,
+                    color: defaultColor,
+                  ),
                 ),
               ],
             ),

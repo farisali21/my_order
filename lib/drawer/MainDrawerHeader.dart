@@ -11,9 +11,12 @@ class MainDrawerHeader extends StatelessWidget {
       children: [
         IconButton(
           onPressed: () {
-            Navigator.pushReplacement(
+            Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(builder: (context) => CheckOutPage()),
+              MaterialPageRoute(
+                builder: (BuildContext context) => CheckOutPage(),
+              ),
+                  (route) => false,
             );
           },
           icon: Icon(

@@ -1,30 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:my_order/constants/constants.dart';
 import 'package:my_order/yourOrders/widgets/your_orders_buttons.dart';
 
 import '../controller.dart';
-class OrdersButtonRow extends StatelessWidget {
 
+class OrdersButtonRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var controller = YourOrdersController.of(context);
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        YourOrdersButton(
-          text: 'Old Orders',
-          isActive: false,
-          onpressed: () {
-            controller.switchButton(false);
-          },
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: 60,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(50),
+        color: kSecondaryColor,
+      ),
+      child: TabBar(
+        indicator: BoxDecoration(
+          borderRadius: BorderRadius.circular(50),
+          color: Colors.red,
         ),
-        YourOrdersButton(
-          text: 'Recent Orders',
-          isActive: true,
-          onpressed: () {
-            controller.switchButton(true);
-          },
-        ),
-      ],
+        tabs: [
+          YourOrdersButton(text: 'Old Orders'),
+          YourOrdersButton(text: 'Recent orders'),
+        ],
+      ),
     );
   }
 }
