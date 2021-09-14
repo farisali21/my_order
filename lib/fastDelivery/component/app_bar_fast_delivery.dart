@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_order/constants/constants.dart';
 import 'package:my_order/mainPage/components/widgets/search_bar.dart';
+import 'package:my_order/searchPage/search_page.dart';
 
 fastDeliveryAppBar(context) => AppBar(
     backgroundColor: Colors.transparent,
@@ -24,7 +25,10 @@ fastDeliveryAppBar(context) => AppBar(
         ),
         InkWell(
           hoverColor: Colors.white,
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => SearchPage()));
+          },
           child: Container(
             padding: EdgeInsets.all(4),
             margin: EdgeInsets.all(6),

@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 class SearchWidget extends StatefulWidget {
   final String text;
+  final ValueChanged<String> onChanged;
   final String hintText;
 
   const SearchWidget({
     Key? key,
     required this.text,
+    required this.onChanged,
     required this.hintText,
   }) : super(key: key);
 
@@ -29,20 +31,29 @@ class _SearchWidgetState extends State<SearchWidget> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: Colors.white,
-        border: Border.all(color: Colors.pink),
+        border: Border.all(color: Colors.black26),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: TextField(
         controller: controller,
         decoration: InputDecoration(
           icon: Icon(Icons.search, color: style.color),
-          // suffixIcon: ,
+          suffixIcon: widget.text.isNotEmpty
+              ? GestureDetector(
+                  child: Icon(Icons.close, color: style.color),
+                  onTap: () {
+                    controller.clear();
+                    widget.onChanged('');
+                    FocusScope.of(context).requestFocus(FocusNode());
+                  },
+                )
+              : null,
           hintText: widget.hintText,
-          hintStyle: TextStyle(fontSize: 15, height: 1.5),
+          hintStyle: style,
           border: InputBorder.none,
         ),
         style: style,
-        onChanged: (vlaue) {},
+        onChanged: widget.onChanged,
       ),
     );
   }
