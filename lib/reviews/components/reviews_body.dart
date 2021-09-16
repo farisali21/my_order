@@ -9,7 +9,8 @@ import 'package:my_order/reviews/controller.dart';
 import 'package:my_order/reviews/widget/container_review.dart';
 import 'package:my_order/reviews/widget/general_review.dart';
 import 'package:my_order/reviews/widget/review_card.dart';
-
+import 'package:my_order/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class ReviewsBody extends StatelessWidget {
 
   @override
@@ -24,7 +25,7 @@ class ReviewsBody extends StatelessWidget {
               TopPart(),
               Center(
                 child: Text(
-                  'Rating & Reviews',
+                  LocaleKeys.reviews_and_reviews.tr(),
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                 ),
               ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_order/constants/constants.dart';
-
+import 'package:my_order/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class CardDetails extends StatelessWidget {
   final mealName;
   final price;
@@ -17,14 +18,15 @@ class CardDetails extends StatelessWidget {
           mealName,
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
-        Text('Price: $price EGP'),
+        Text('${LocaleKeys.price.tr()} $price EGP'),
         Text(
-          'Will end in $end days',
+          '${LocaleKeys.offers_will_end.tr()} $end ',
           style: TextStyle(color: kPrimaryColor),
         ),
         Container(
-          width: 100,
+          // width: 100,
           height: 40,
+          padding: EdgeInsets.symmetric(horizontal: 5),
           decoration: BoxDecoration(
             color: kPrimaryColor,
             borderRadius: BorderRadius.circular(10),
@@ -32,7 +34,7 @@ class CardDetails extends StatelessWidget {
           child: RawMaterialButton(
             onPressed: onpressed,
             child: Text(
-              'More Details',
+              LocaleKeys.offers_more_details.tr(),
               style: TextStyle(color: Colors.white),
             ),
           ),

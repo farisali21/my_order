@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_order/constants/constants.dart';
+import 'package:easy_localization/easy_localization.dart';
 class VoucherRight extends StatelessWidget {
   final code;
   VoucherRight({this.code});
@@ -25,8 +26,10 @@ class VoucherRight extends StatelessWidget {
         ),
       ),
       decoration: BoxDecoration(
-        border: Border(
+        border: context.locale.toString() =="en" ?Border(
           left: BorderSide(color: kPrimaryColor, width: 2),
+        ):Border(
+          right: BorderSide(color: kPrimaryColor, width: 2),
         ),
       ),
     );

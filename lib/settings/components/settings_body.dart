@@ -6,7 +6,8 @@ import 'package:my_order/settings/components/switchButton.dart';
 import 'package:my_order/settings/components/language_drop_down.dart';
 import 'package:my_order/settings/widget/listview_row.dart';
 import 'package:my_order/settings/widget/settings_text.dart';
-
+import 'package:my_order/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import '../controller.dart';
 
 class SettingsBody extends StatelessWidget {
@@ -19,19 +20,19 @@ class SettingsBody extends StatelessWidget {
       children: [
         ListViewRow1(
           leftWidget: SettingsText(
-            text: 'Notifications',
+            text: LocaleKeys.drawer_notifications.tr(),
           ),
           rightWidget: SwitchButton(),
         ),
         ListViewRow1(
           leftWidget: SettingsText(
-            text: 'Language',
+            text: LocaleKeys.drawer_language.tr(),
           ),
           rightWidget: LanguageDropDown(),
         ),
         ListViewRow1(
           leftWidget: SettingsText(
-            text: 'Country',
+            text: LocaleKeys.drawer_country.tr(),
           ),
           rightWidget: CountryDropDown(),
         ),

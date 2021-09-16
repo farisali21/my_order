@@ -4,7 +4,8 @@ import 'package:my_order/drawer/drawer_body.dart';
 import 'package:my_order/drawerAppbar/drawerAppBar.dart';
 import 'package:my_order/help/components/help_body.dart';
 import 'package:my_order/mainPage/view.dart';
-
+import 'package:my_order/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class HelpScaffold extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
@@ -30,7 +31,7 @@ class HelpScaffold extends StatelessWidget {
                 color: kPrimaryColor,
                 size: 35,
               )),
-          'Help',
+          LocaleKeys.drawer_help.tr(),
         ),
         body: HelpBody(),
         drawer: DrawerBody(index: 8,),

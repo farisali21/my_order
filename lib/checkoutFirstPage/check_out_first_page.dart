@@ -11,7 +11,7 @@ class CheckoutFirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: checkOutAppBar('Check out', context),
+      appBar: checkOutAppBar((){},'Check out', context),
       body: Column(
         children: [
           Form(

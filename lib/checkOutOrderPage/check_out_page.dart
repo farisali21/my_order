@@ -11,13 +11,15 @@ class CheckOutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Future<bool> onBack(){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MainPage()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MainPage(),),);
       return new Future.value(true);
     }
     return WillPopScope(
         onWillPop:onBack ,
         child: Scaffold(
-      appBar: checkOutAppBar('Orders', context),
+      appBar: checkOutAppBar((){
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MainPage(),),);
+      },'Orders', context),
       body: SingleChildScrollView(
         child: SingleChildScrollView(
           child: Column(

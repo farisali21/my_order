@@ -30,7 +30,7 @@ class ImageCard extends StatelessWidget {
                     bottomLeft: Radius.circular(5))),
             child: Center(
                 child: Text(
-                  '-$discount%',
+                  '-$discount %',
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,

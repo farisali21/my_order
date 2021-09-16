@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
-checkOutAppBar(title, context) => AppBar(
+checkOutAppBar(void onPressedIcon(),title, context) => AppBar(
       backgroundColor: Colors.transparent,
       titleSpacing: 0,
       elevation: 0,
       automaticallyImplyLeading: false,
-      leading: IconButton(onPressed: (){
-        Navigator.of(context).pop();
-      }, icon: Icon(
+      leading: IconButton(onPressed: onPressedIcon, icon: Icon(
         Icons.arrow_back,
         color: Colors.black,
         size: 30,

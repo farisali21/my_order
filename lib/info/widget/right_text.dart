@@ -7,12 +7,10 @@ class RightText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.centerRight,
-      width: MediaQuery. of(context). size. width*0.45,
-      child: Flexible(
-        child: Text(
-          text,
-          style: TextStyle(color: Colors.grey, fontSize: 18),
-        ),
+      width: MediaQuery. of(context). size. width*0.4,
+      child: Text(
+        text,
+        style: TextStyle(color: Colors.grey, fontSize: 18),
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_order/translations/locale_keys.g.dart';
 import 'package:my_order/widegts/button.dart';
-
+import 'package:easy_localization/easy_localization.dart';
 class BottomBar extends StatelessWidget {
   const BottomBar({Key? key}) : super(key: key);
 
@@ -12,14 +13,14 @@ class BottomBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text('Choose location',),
+          Text(LocaleKeys.map_choose_location.tr(),),
           Row(
             children: [
               Icon(Icons.location_on,color: Colors.black,),
               Text('Street',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)
             ],
           ),
-          MainButton(onpressed: (){},text: 'Choose Location',)
+          MainButton(onpressed: (){},text: LocaleKeys.map_choose_location.tr(),)
         ],
       ),
     );

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_order/checkOutOrderPage/check_out_page.dart';
 import 'package:my_order/settings/view.dart';
-
+import 'package:my_order/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class MainDrawerHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -42,7 +43,7 @@ class MainDrawerHeader extends StatelessWidget {
               height: 5,
             ),
             Text(
-              'Login in',
+              LocaleKeys.drawer_login_in.tr(),
               style: TextStyle(color: Colors.white, fontSize: 20),
             )
           ],

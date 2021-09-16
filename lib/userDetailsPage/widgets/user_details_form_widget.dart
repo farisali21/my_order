@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_order/translations/locale_keys.g.dart';
 import 'package:my_order/userDetailsPage/userDetailsCubit/userdetails_cubit.dart';
 
 import 'text_form_field_user_details.dart';
-
+import 'package:easy_localization/easy_localization.dart';
 class UserDetailsForm extends StatelessWidget {
   const UserDetailsForm({
     Key? key,
@@ -21,14 +22,14 @@ class UserDetailsForm extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 textFormFieldUserDetails(
-                    TextInputType.name, 'Full name', SizedBox()),
+                    TextInputType.name, LocaleKeys.user_details_full_name.tr(), SizedBox()),
                 textFormFieldUserDetails(
-                    TextInputType.emailAddress, 'Email', SizedBox()),
+                    TextInputType.emailAddress, LocaleKeys.user_details_email.tr(), SizedBox()),
                 textFormFieldUserDetails(
-                    TextInputType.number, 'PhoneNumber', SizedBox()),
+                    TextInputType.number, LocaleKeys.drawer_home.tr(), SizedBox()),
                 textFormFieldUserDetails(
                   TextInputType.name,
-                  'Address',
+                  LocaleKeys.user_details_address.tr(),
                   Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: GestureDetector(
@@ -41,7 +42,7 @@ class UserDetailsForm extends StatelessWidget {
                   ),
                 ),
                 textFormFieldUserDetails(
-                    TextInputType.number, 'Password', SizedBox()),
+                    TextInputType.number, LocaleKeys.user_details_password.tr(), SizedBox(),),
               ],
             ),
           ),
