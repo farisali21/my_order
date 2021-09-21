@@ -27,14 +27,16 @@ class HelpScaffold extends StatelessWidget {
                 _scaffoldKey.currentState!.openDrawer();
               },
               icon: Icon(
-                Icons.menu,
+                Icons.sort,
                 color: kPrimaryColor,
                 size: 35,
               )),
           LocaleKeys.drawer_help.tr(),
         ),
         body: HelpBody(),
-        drawer: DrawerBody(index: 8,),
+        drawer: DrawerBody(
+          index: 8,
+        ),
       ),
     );
   }

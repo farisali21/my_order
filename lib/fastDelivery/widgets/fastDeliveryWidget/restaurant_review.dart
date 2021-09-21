@@ -6,6 +6,7 @@ class RestaurantReview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         RatingBar.builder(
           itemSize: 12,
@@ -23,7 +24,6 @@ class RestaurantReview extends StatelessWidget {
             print(rating);
           },
         ),
-        const SizedBox(width: 20),
         Row(
           children: [
             Icon(

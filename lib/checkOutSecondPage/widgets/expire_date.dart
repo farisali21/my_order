@@ -1,4 +1,6 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
+import 'package:my_order/translations/locale_keys.g.dart';
 
 class ExpireDate extends StatelessWidget {
   const ExpireDate({Key? key}) : super(key: key);
@@ -7,7 +9,7 @@ class ExpireDate extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('Expire Date'),
+        Text(LocaleKeys.expire_date.tr()),
         Container(
           margin: EdgeInsets.all(10.0),
           padding: EdgeInsets.all(10.0),

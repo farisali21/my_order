@@ -49,5 +49,60 @@
   "reviews_value_for_money": "قيمة مقابل سعر",
   "reviews_delivery_time": "وقت التوصيل",
   "reviews_quality": "جودة الطعام",
-  "reviews_and_reviews": "مراجعات و التقيمات"
+  "reviews_and_reviews": "مراجعات و التقيمات",
+
+  "food_button": "المأكولات",
+  "gronveries_button": "الخضراوات",
+  "sweets_button": "الحلويات",
+  "drinks_button": "المشروبات",
+  "popular_food": "المأكولات المشهوره",
+  "view_more": "مشاهدة المزيد",
+  "popular_brands_near_u": "اشهر البراندات الموجوده في المنطقه",
+  "spical_offer": "عرض مميزه",
+  "all_tab_bar": "الكل",
+  "crepe_tab_bar": "كريب",
+  "pizza_tab_bar": "بينزا",
+  "sweets_tab_bar": "الحلويات",
+  "sanwitch_tab_bar": "ساندوتش",
+  "fast_delivery": "توصيل سريع",
+  "all_resturant": "كل المطاعم",
+  "view_all_restaurant": "عرض كل المطاعم",
+  "online": "اونلاين",
+  "info": "معلومات",
+  "reviews": "المراجعات",
+  "delivery": "التوصيل",
+  "mint": "دقيقه",
+  "offer_of_restaurant": "عروض المطعم",
+  "chosse_size": "اخنر الحجم",
+  "extras": "الاضافات",
+  "add_notes": "اضف ملاحظات",
+  "write_notes_text_field": "هل هناك اي اضافات",
+  "add_to_cart": "اضف الي السله",
+  "order_app_bar": "الطالبات",
+  "order_details": "تفاصيل الطلب",
+  "spicail_service": "خدمات خاصه",
+  "delivery_price": "قيمة الديلفيري",
+  "total": "الكل",
+  "check_out": "تنفيذ الطلب",
+  "add_item": "اضف عنصر",
+  "full_name": "الاسم بالكامل",
+  "phone_number": "رقم الهاتف",
+  "address": "العنوان",
+  "next_button": "التالي",
+  "visa": "بطاقة الفيزا",
+  "cash": "نقدا",
+  "card_number": "رقم بطاقة الفيزا",
+  "card_holder_name": "اسم حامل بطاقة الفيزا",
+  "expire_date": "ناريخ الانتهاء",
+  "finish_order": "تاكيد",
+  "optional": "  (اخنياري)  "
+
+
+
+
+
+
+
+
+
 }

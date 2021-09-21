@@ -1,8 +1,10 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_order/addOrderToCart/cubit/additem_cubit.dart';
 import 'package:my_order/addOrderToCart/widgets/chosseSize/meal_size_widget.dart';
 import 'package:my_order/addOrderToCart/widgets/extrasWidget/meal_extra_widget.dart';
+import 'package:my_order/translations/locale_keys.g.dart';
 
 class ChosseExtras extends StatelessWidget {
   final List<Map<String, dynamic>> _chosseExtras = [
@@ -34,14 +36,14 @@ class ChosseExtras extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  'Extras  ',
+                  LocaleKeys.extras.tr(),
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
-                  '(Optional)',
+                  LocaleKeys.optional.tr(),
                   style: TextStyle(
                     fontSize: 10,
                     fontWeight: FontWeight.w300,

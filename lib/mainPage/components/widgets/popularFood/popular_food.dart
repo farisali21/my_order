@@ -1,5 +1,7 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:my_order/mainPage/components/widgets/popularFood/popular_food_images.dart';
+import 'package:my_order/translations/locale_keys.g.dart';
 
 class PopularFood extends StatelessWidget {
   const PopularFood({Key? key}) : super(key: key);
@@ -14,13 +16,13 @@ class PopularFood extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Popular food',
+                LocaleKeys.popular_food.tr(),
                 style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
               ),
               OutlinedButton(
                 onPressed: () {},
                 child: Text(
-                  'view more',
+                  LocaleKeys.view_more.tr(),
                   style: TextStyle(color: Colors.black),
                 ),
                 style: TextButton.styleFrom(

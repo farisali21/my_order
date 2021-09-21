@@ -1,4 +1,6 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
+import 'package:my_order/translations/locale_keys.g.dart';
 
 class AddNotes extends StatelessWidget {
   const AddNotes({Key? key}) : super(key: key);
@@ -11,7 +13,7 @@ class AddNotes extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Add Notes...',
+            LocaleKeys.add_notes.tr(),
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w900,
@@ -30,7 +32,7 @@ class AddNotes extends StatelessWidget {
               padding: const EdgeInsets.all(5.0),
               child: TextField(
                 decoration: InputDecoration.collapsed(
-                  hintText: 'write any special thing you want to do.',
+                  hintText: LocaleKeys.write_notes_text_field.tr(),
                   border: InputBorder.none,
                 ),
                 textAlign: TextAlign.start,

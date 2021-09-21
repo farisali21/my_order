@@ -1,7 +1,9 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:my_order/checkOutSecondPage/checkout_scond_page.dart';
 import 'package:my_order/checkoutFirstPage/check_out_first_page.dart';
 import 'package:my_order/constants/constants.dart';
+import 'package:my_order/translations/locale_keys.g.dart';
 
 class CheckOutButtons extends StatelessWidget {
   const CheckOutButtons({Key? key}) : super(key: key);
@@ -13,11 +15,11 @@ class CheckOutButtons extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          checkOutButton('Check out', () {
+          checkOutButton(LocaleKeys.check_out.tr(), () {
             Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => CheckoutFirstPage()));
           }),
-          checkOutButton('Add Item', () {}),
+          checkOutButton(LocaleKeys.add_item.tr(), () {}),
         ],
       ),
     );

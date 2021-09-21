@@ -1,6 +1,8 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:my_order/checkOutOrderPage/check_out_page.dart';
 import 'package:my_order/constants/constants.dart';
+import 'package:my_order/translations/locale_keys.g.dart';
 
 Widget addToCartButton(context) {
   return Container(
@@ -16,7 +18,7 @@ Widget addToCartButton(context) {
               .push(MaterialPageRoute(builder: (context) => CheckOutPage()));
         },
         child: Text(
-          'Add to cart',
+          LocaleKeys.add_to_cart.tr(),
           textAlign: TextAlign.center,
           style: TextStyle(
               fontSize: 25, fontWeight: FontWeight.w900, color: Colors.white),

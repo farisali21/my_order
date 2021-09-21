@@ -18,38 +18,50 @@ class FastDeiveryOffer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
-            width: MediaQuery.of(context).size.width * 0.7,
-            height: MediaQuery.of(context).size.height * 0.17,
-            child: Image(
+      padding: const EdgeInsets.only(right: 10.0),
+      child: Container(
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
+        width: MediaQuery.of(context).size.width * 0.7,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image(
+              width: MediaQuery.of(context).size.width * 0.7,
+              height: MediaQuery.of(context).size.height * 0.17,
               image: AssetImage(imageUrl),
               fit: BoxFit.fill,
             ),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
-              ),
-              Text(
-                foodType,
-                style: TextStyle(fontSize: 13, fontWeight: FontWeight.w300),
-              ),
-              Text(
-                deliveryPrice,
-                style: TextStyle(fontSize: 13, fontWeight: FontWeight.w300),
-              ),
-              RestaurantReview(),
-            ],
-          ),
-        ],
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 4.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: TextStyle(
+                            fontSize: 15, fontWeight: FontWeight.w700),
+                      ),
+                      Text(
+                        foodType,
+                        style: TextStyle(
+                            fontSize: 13, fontWeight: FontWeight.w300),
+                      ),
+                      Text(
+                        deliveryPrice,
+                        style: TextStyle(
+                            fontSize: 13, fontWeight: FontWeight.w300),
+                      ),
+                    ],
+                  ),
+                ),
+                RestaurantReview(),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

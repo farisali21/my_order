@@ -1,6 +1,9 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_order/checkOutSecondPage/widgets/visa_widget.dart';
 import 'package:my_order/constants/constants.dart';
+import 'package:my_order/translations/locale_keys.g.dart';
 
 class TapBarCheckout extends StatelessWidget {
   const TapBarCheckout({
@@ -23,15 +26,15 @@ class TapBarCheckout extends StatelessWidget {
                   Tab(
                     child: Row(
                       children: [
-                        Icon(
-                          Icons.credit_card,
-                          color: Colors.blue,
+                        FaIcon(
+                          FontAwesomeIcons.ccVisa,
+                          color: Colors.green,
                         ),
                         SizedBox(
                           width: 15,
                         ),
                         Text(
-                          'Visa',
+                          LocaleKeys.visa.tr(),
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 20,
@@ -51,7 +54,7 @@ class TapBarCheckout extends StatelessWidget {
                           width: 15,
                         ),
                         Text(
-                          'Cash',
+                          LocaleKeys.cash.tr(),
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 20,

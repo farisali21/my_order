@@ -1,8 +1,10 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:my_order/checkOutOrderPage/widgets/components/app_bar_check_out.dart';
 import 'package:my_order/checkOutSecondPage/checkout_scond_page.dart';
 import 'package:my_order/checkoutFirstPage/text_form_field_checkout.dart';
 import 'package:my_order/constants/constants.dart';
+import 'package:my_order/translations/locale_keys.g.dart';
 import 'package:my_order/userDetailsPage/widgets/text_form_field_user_details.dart';
 
 class CheckoutFirstPage extends StatelessWidget {
@@ -11,7 +13,7 @@ class CheckoutFirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: checkOutAppBar((){},'Check out', context),
+      appBar: checkOutAppBar((){},LocaleKeys.check_out.tr(), context),
       body: Column(
         children: [
           Form(

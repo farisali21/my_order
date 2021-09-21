@@ -22,8 +22,14 @@ class RestaurantDetailsPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                RestaurantDetailsWidget(),
-                RestaurantReview(),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  child: RestaurantDetailsWidget(),
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.4,
+                  child: RestaurantReview(),
+                ),
               ],
             ),
             RestaurantOffer(),

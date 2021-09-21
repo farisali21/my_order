@@ -4,7 +4,7 @@ import '../drawer/drawer_body.dart';
 import 'package:my_order/mainPage/components/main_page_body.dart';
 
 import '../drawer/controller.dart';
-import 'components/widgets/app_bar_main_page.dart';
+import 'components/app_bar_main_page.dart';
 
 class MainPage extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();

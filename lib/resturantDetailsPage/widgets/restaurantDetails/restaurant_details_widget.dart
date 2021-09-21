@@ -1,5 +1,7 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:my_order/constants/constants.dart';
+import 'package:my_order/translations/locale_keys.g.dart';
 
 class RestaurantDetailsWidget extends StatelessWidget {
   const RestaurantDetailsWidget({Key? key}) : super(key: key);
@@ -14,10 +16,10 @@ class RestaurantDetailsWidget extends StatelessWidget {
           children: [
             Text(
               'Koshary Gedoo',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const SizedBox(
-              width: 12,
+              width: 8,
             ),
             Container(
               margin: EdgeInsets.only(right: 3),
@@ -29,7 +31,7 @@ class RestaurantDetailsWidget extends StatelessWidget {
               ),
             ),
             Text(
-              'Online',
+              LocaleKeys.online.tr(),
               style: TextStyle(
                 fontSize: 10,
                 color: defaultColor,
@@ -39,7 +41,7 @@ class RestaurantDetailsWidget extends StatelessWidget {
         ),
         SizedBox(height: 12),
         Text(
-          'Delivery:5EGP   20-30 mint    1km',
+          '${LocaleKeys.delivery.tr()}:5EGP   20-30 mint    1km',
           style: TextStyle(
             fontSize: 10,
           ),

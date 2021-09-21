@@ -1,5 +1,7 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:my_order/constants/constants.dart';
+import 'package:my_order/translations/locale_keys.g.dart';
 
 import 'order_details_container.dart';
 
@@ -33,7 +35,7 @@ class OrderDetails extends StatelessWidget {
                 borderRadius: BorderRadius.circular(70),
               ),
               child: Text(
-                'Order details',
+                LocaleKeys.order_details.tr(),
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.w900,
@@ -43,11 +45,11 @@ class OrderDetails extends StatelessWidget {
           ),
           SizedBox(height: 8),
           OrderDetailsWidget(
-            title: 'special service: ',
+            title: LocaleKeys.spicail_service.tr(),
             price: '10EGP',
           ),
           OrderDetailsWidget(
-            title: 'Delivery price: ',
+            title: LocaleKeys.delivery_price.tr(),
             price: '9.99Egp',
           ),
           Center(
@@ -59,7 +61,7 @@ class OrderDetails extends StatelessWidget {
                     width: 1,
                   ),
                   borderRadius: BorderRadius.circular(10)),
-              child: Text('Total: 55 EGP',
+              child: Text('${LocaleKeys.total.tr()}: 55 EGP',
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.w900,

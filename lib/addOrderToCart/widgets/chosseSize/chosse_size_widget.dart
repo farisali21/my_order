@@ -1,7 +1,9 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_order/addOrderToCart/cubit/additem_cubit.dart';
 import 'package:my_order/addOrderToCart/widgets/chosseSize/meal_size_widget.dart';
+import 'package:my_order/translations/locale_keys.g.dart';
 
 class ChosseSize extends StatelessWidget {
   final List<Map<String, dynamic>> _chosseSize = [
@@ -31,7 +33,7 @@ class ChosseSize extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Chosse Size',
+              LocaleKeys.chosse_size.tr(),
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,

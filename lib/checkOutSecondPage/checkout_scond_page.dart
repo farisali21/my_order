@@ -1,6 +1,8 @@
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:my_order/checkOutOrderPage/widgets/components/app_bar_check_out.dart';
 import 'package:my_order/constants/constants.dart';
+import 'package:my_order/translations/locale_keys.g.dart';
 
 import 'widgets/tab_bar_checkout.dart';
 
@@ -10,7 +12,7 @@ class CheckoutSecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: checkOutAppBar((){},'Check out', context),
+      appBar: checkOutAppBar((){}, LocaleKeys.check_out.tr(), context),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -11,8 +11,9 @@ class OffersScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future<bool> onBack(){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MainPage()));
+    Future<bool> onBack() {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => MainPage()));
       return new Future.value(true);
     }
     return WillPopScope(

@@ -13,12 +13,14 @@ class YourOrdersScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future<bool> onBack(){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MainPage()));
+    Future<bool> onBack() {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => MainPage()));
       return new Future.value(true);
     }
+
     return WillPopScope(
-      onWillPop:onBack ,
+      onWillPop: onBack,
       child: DefaultTabController(
         length: 2,
         child: Scaffold(
@@ -29,7 +31,7 @@ class YourOrdersScaffold extends StatelessWidget {
                     _scaffoldKey.currentState!.openDrawer();
                   },
                   icon: Icon(
-                    Icons.menu,
+                    Icons.sort,
                     color: kPrimaryColor,
                     size: 35,
                   )),
@@ -37,7 +39,9 @@ class YourOrdersScaffold extends StatelessWidget {
           body: BlocProvider(
               create: (context) => YourOrdersController(),
               child: YourOrdersBody()),
-          drawer: DrawerBody(index: 3,),
+          drawer: DrawerBody(
+            index: 3,
+          ),
         ),
       ),
     );
