@@ -26,11 +26,14 @@ class OrderItem extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text(
-                    'X',
-                    style: TextStyle(
-                      color: defaultColor,
-                      fontSize: 16,
+                  GestureDetector(
+                    onTap: () {},
+                    child: Text(
+                      'X',
+                      style: TextStyle(
+                        color: defaultColor,
+                        fontSize: 16,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 40),

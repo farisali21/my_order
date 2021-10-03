@@ -26,6 +26,8 @@ class AdditemCubit extends Cubit<AdditemState> {
     emit(AdditemRebuild());
   }
 
+  void updatePrice() {}
+
   void changeColorOfChosseExtra() {
     colorBoolOfChosseExtra = !colorBoolOfChosseExtra;
     emit(AdditemRebuild());
@@ -40,4 +42,8 @@ class AdditemCubit extends Cubit<AdditemState> {
     currentIndexOfChosseExtras = index;
     emit(AdditemRebuild());
   }
+
+  void addNotes() {}
+
+  void addToCart() {}
 }

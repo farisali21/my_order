@@ -12,7 +12,9 @@ class CheckoutSecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: checkOutAppBar((){}, LocaleKeys.check_out.tr(), context),
+      appBar: checkOutAppBar(() {
+        Navigator.of(context).pop();
+      }, LocaleKeys.check_out.tr(), context),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_order/constants/constants.dart';
 import 'package:my_order/cuisinesFilters/cuisines_filters_page.dart';
-import 'package:my_order/mainPage/components/widgets/search_bar.dart';
+import 'package:my_order/widegts/search_bar.dart';
 import 'package:my_order/searchPage/search_page.dart';
 import 'package:my_order/translations/locale_keys.g.dart';
 

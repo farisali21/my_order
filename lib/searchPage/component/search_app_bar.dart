@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_order/mainPage/components/widgets/search_bar.dart';
+import 'package:my_order/widegts/search_bar.dart';
 
 searchAppBar(context) => AppBar(
       backgroundColor: Colors.transparent,

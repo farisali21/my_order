@@ -6,8 +6,9 @@ import 'package:my_order/drawerAppbar/drawerAppBar.dart';
 import 'package:my_order/mainPage/view.dart';
 import 'package:my_order/translations/locale_keys.g.dart';
 import 'package:my_order/yourOrders/components/your_orders_body.dart';
-import 'package:my_order/yourOrders/controller.dart';
+import 'package:my_order/yourOrders/cubit/controller.dart';
 import 'package:easy_localization/easy_localization.dart';
+
 class YourOrdersScaffold extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 

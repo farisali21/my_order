@@ -5,7 +5,6 @@ import 'package:my_order/checkOutSecondPage/checkout_scond_page.dart';
 import 'package:my_order/checkoutFirstPage/text_form_field_checkout.dart';
 import 'package:my_order/constants/constants.dart';
 import 'package:my_order/translations/locale_keys.g.dart';
-import 'package:my_order/userDetailsPage/widgets/text_form_field_user_details.dart';
 
 class CheckoutFirstPage extends StatelessWidget {
   const CheckoutFirstPage({Key? key}) : super(key: key);
@@ -13,7 +12,9 @@ class CheckoutFirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: checkOutAppBar((){},LocaleKeys.check_out.tr(), context),
+      appBar: checkOutAppBar(() {
+        Navigator.of(context).pop();
+      }, LocaleKeys.check_out.tr(), context),
       body: Column(
         children: [
           Form(
@@ -22,13 +23,13 @@ class CheckoutFirstPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  textFormFieldCheckout(
-                      TextInputType.name, 'Full name', SizedBox()),
-                  textFormFieldCheckout(
-                      TextInputType.number, 'PhoneNumber', SizedBox()),
+                  textFormFieldCheckout(TextInputType.name,
+                      LocaleKeys.full_name.tr(), SizedBox()),
+                  textFormFieldCheckout(TextInputType.number,
+                      LocaleKeys.phone_number.tr(), SizedBox()),
                   textFormFieldCheckout(
                     TextInputType.name,
-                    'Address',
+                    LocaleKeys.address.tr(),
                     Padding(
                       padding: const EdgeInsets.all(12.0),
                       child: GestureDetector(
@@ -53,7 +54,7 @@ class CheckoutFirstPage extends StatelessWidget {
                                 builder: (context) => CheckoutSecondPage()));
                           },
                           child: Text(
-                            'Next',
+                            LocaleKeys.next_button.tr(),
                             style: TextStyle(fontSize: 18),
                           ))),
                 ],

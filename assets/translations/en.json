@@ -17,7 +17,6 @@
   "all_resturant": "All Resurant",
   "view_all_restaurant": "View all restaurant",
   "online": "online",
-  "info": "Info",
   "reviews": "Reviews",
   "delivery": "delivery",
   "mint": "mint",
@@ -28,8 +27,8 @@
   "write_notes_text_field": "write any spicial thing you want to do.",
   "order_app_bar": "Orders",
   "order_details": "Order details",
-  "spicail_service": "Spicail service",
-  "delivery_price": "Delivery price",
+  "spicail_service": "Spicail service: ",
+  "delivery_price": "Delivery price: ",
   "total": "total",
   "add_to_cart": "Add to cart",
   "check_out": "Check out",
@@ -46,6 +45,9 @@
   "cvv": "CVV",
   "finish_order": "Finish order",
   "optional": "  (Optional)  ",
+
+
+
 
   "drawer_login_in": "login",
   "drawer_home": "Home",
@@ -84,7 +86,7 @@
   "vouchers_no_voucher_content": "you can get more vouchers through redeeming points",
   "help_main_text": "Hi Ahmed, How can we help you ?",
   "help_title_text": "I need help with my current order",
-  "info": "Information",
+  "info": "Info",
   "info_reviews": "Reviews",
   "info_restaurant_area": "Restaurant area",
   "info_opening_times": "Opening times",

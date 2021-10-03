@@ -50,7 +50,6 @@ mainPageAppBar(void onpressed(), context) => AppBar(
                 ),
                 Flexible(
                   child: Text(
-                    //////////////////////////////////////
                     LocaleKeys.main_search_text.tr(),
                     overflow: TextOverflow.fade,
                     style: TextStyle(

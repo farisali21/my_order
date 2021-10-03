@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_order/mainPage/cubit/home_cubit.dart';
 import '../drawer/drawer_body.dart';
 import 'package:my_order/mainPage/components/main_page_body.dart';
 
@@ -36,17 +37,20 @@ class MainPage extends StatelessWidget {
       return new Future.value(answer);
     }
 
-    return WillPopScope(
-        onWillPop: onBack,
-        child: Scaffold(
-          key: _scaffoldKey,
-          appBar: mainPageAppBar(() {
-            _scaffoldKey.currentState!.openDrawer();
-          }, context),
-          drawer: DrawerBody(
-            index: 0,
-          ),
-          body: MainPageBody(),
-        ));
+    return BlocProvider(
+      create: (context) => HomeCubit(),
+      child: WillPopScope(
+          onWillPop: onBack,
+          child: Scaffold(
+            key: _scaffoldKey,
+            appBar: mainPageAppBar(() {
+              _scaffoldKey.currentState!.openDrawer();
+            }, context),
+            drawer: DrawerBody(
+              index: 0,
+            ),
+            body: MainPageBody(),
+          )),
+    );
   }
 }

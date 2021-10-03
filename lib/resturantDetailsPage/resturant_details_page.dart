@@ -16,7 +16,7 @@ class RestaurantDetailsPage extends StatelessWidget {
       appBar: restaurantDetails(context),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
+        child: ListView(
           children: [
             RestaurantPhoto(),
             Row(
@@ -27,7 +27,7 @@ class RestaurantDetailsPage extends StatelessWidget {
                   child: RestaurantDetailsWidget(),
                 ),
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.4,
+                  width: MediaQuery.of(context).size.width * 0.42,
                   child: RestaurantReview(),
                 ),
               ],

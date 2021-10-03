@@ -57,7 +57,8 @@ class FoodTapBar extends StatelessWidget {
                   ),
                 ],
               ),
-              Expanded(
+              Container(
+                height: 410,
                 child: TabBarView(
                   children: <Widget>[
                     MealsContainer(),

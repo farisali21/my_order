@@ -6,6 +6,7 @@ part 'cuisinesfilters_state.dart';
 
 class CuisinesfiltersCubit extends Cubit<CuisinesfiltersState> {
   CuisinesfiltersCubit() : super(CuisinesfiltersInitial());
+
   static CuisinesfiltersCubit of(context) => BlocProvider.of(context);
 
   final List<Map<String, dynamic>> filters = [

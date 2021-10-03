@@ -29,17 +29,21 @@ class OrderDetails extends StatelessWidget {
             borderRadius: BorderRadius.circular(70),
             child: Container(
               padding: EdgeInsets.all(6),
-              width: MediaQuery.of(context).size.width / 1.1,
+              // width: MediaQuery.of(context).size.width / 1.1,
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.white),
                 borderRadius: BorderRadius.circular(70),
               ),
-              child: Text(
-                LocaleKeys.order_details.tr(),
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w900,
-                ),
+              child: Row(
+                children: [
+                  Text(
+                    LocaleKeys.order_details.tr(),
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

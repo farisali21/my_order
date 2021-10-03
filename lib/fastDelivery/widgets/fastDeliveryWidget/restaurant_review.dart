@@ -9,7 +9,7 @@ class RestaurantReview extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         RatingBar.builder(
-          itemSize: 12,
+          itemSize: 13,
           initialRating: 5,
           minRating: 1,
           direction: Axis.horizontal,

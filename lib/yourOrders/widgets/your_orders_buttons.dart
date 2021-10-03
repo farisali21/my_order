@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_order/constants/constants.dart';
 
-import '../controller.dart';
+import '../cubit/controller.dart';
 
 class YourOrdersButton extends StatelessWidget {
   final text;
@@ -12,9 +12,7 @@ class YourOrdersButton extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-          fontWeight: FontWeight.bold,
-          color: Color(0xFFFDE5E9),
-          fontSize: 18),
+          fontWeight: FontWeight.bold, color: Color(0xFFFDE5E9), fontSize: 18),
     );
   }
 }

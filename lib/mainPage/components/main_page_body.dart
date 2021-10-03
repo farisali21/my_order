@@ -24,7 +24,7 @@ class _MainPageBodyState extends State<MainPageBody> {
           PopularFood(),
           PopularBrands(),
           SpicalOffer(),
-          DiscountWidget(),
+          // DiscountWidget(),
           SizedBox(height: 15),
         ],
       ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:my_order/constants/constants.dart';
+import 'package:my_order/fastDelivery/widgets/fastDeliveryWidget/restaurant_review.dart';
 
 class PopularFoodItem extends StatelessWidget {
   final imageUrl;
@@ -14,45 +16,38 @@ class PopularFoodItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
+      width: MediaQuery.of(context).size.width * 0.7,
       padding: const EdgeInsets.all(8.0),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
-            width: MediaQuery.of(context).size.width / 2,
+            width: MediaQuery.of(context).size.width * .7,
             height: MediaQuery.of(context).size.height / 6,
             child: Image(
               image: AssetImage(imageUrl),
               fit: BoxFit.fill,
             ),
           ),
-          Text(
-            title,
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
-          ),
-          Text(
-            deliveryPrice,
-            style: TextStyle(fontSize: 13, fontWeight: FontWeight.w300),
-          ),
-          RatingBar.builder(
-            itemSize: 15,
-            initialRating: 3,
-            minRating: 1,
-            direction: Axis.horizontal,
-            allowHalfRating: true,
-            itemCount: 5,
-            itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-            itemBuilder: (context, _) => Icon(
-              Icons.star,
-              color: Colors.amber,
+          Padding(
+            padding: const EdgeInsets.only(left: 5, top: 3),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
+                ),
+                Text(
+                  deliveryPrice,
+                  style: TextStyle(fontSize: 13, fontWeight: FontWeight.w300),
+                ),
+              ],
             ),
-            onRatingUpdate: (rating) {
-              print(rating);
-            },
           ),
+          RestaurantReview(),
         ],
       ),
     );
