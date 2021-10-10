@@ -13,13 +13,21 @@ class LoginFormField extends StatelessWidget {
       builder: (context, state) {
         final controller = LoginformCubit.of(context);
         return Form(
+          key: controller.formKey,
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 TextFormField(
+                  controller: controller.firstNameController,
                   textAlign: TextAlign.start,
+                  validator: (value) {
+                    if (value!.isEmpty && value.length < 7) {
+                      return 'Invalid name!';
+                    }
+                    return null;
+                  },
                   keyboardType: TextInputType.name,
                   onChanged: (_) {},
                   decoration: kTextFieldDecoration.copyWith(
@@ -29,9 +37,16 @@ class LoginFormField extends StatelessWidget {
                 ),
                 SizedBox(height: 18),
                 TextFormField(
+                  controller: controller.lastNameController,
                   textAlign: TextAlign.start,
                   keyboardType: TextInputType.name,
                   onChanged: (_) {},
+                  validator: (value) {
+                    if (value!.isEmpty && value.length < 7) {
+                      return 'Invalid last nam!';
+                    }
+                    return null;
+                  },
                   decoration: kTextFieldDecoration.copyWith(
                     hintText: 'Last name',
                     hintStyle: TextStyle(color: Colors.black54),
@@ -39,9 +54,16 @@ class LoginFormField extends StatelessWidget {
                 ),
                 SizedBox(height: 18),
                 TextFormField(
+                  controller: controller.emailController,
                   textAlign: TextAlign.start,
                   keyboardType: TextInputType.emailAddress,
                   onChanged: (_) {},
+                  validator: (value) {
+                    if (value!.isEmpty && !value.contains('@')) {
+                      return 'Invalid email!';
+                    }
+                    return null;
+                  },
                   decoration: kTextFieldDecoration.copyWith(
                     hintText: 'Email',
                     hintStyle: TextStyle(color: Colors.black54),
@@ -49,9 +71,16 @@ class LoginFormField extends StatelessWidget {
                 ),
                 SizedBox(height: 18),
                 TextFormField(
+                  controller: controller.phoneNumberController,
                   textAlign: TextAlign.start,
                   keyboardType: TextInputType.number,
                   onChanged: (_) {},
+                  validator: (value) {
+                    if (value!.isEmpty && value.length < 7) {
+                      return 'Invalid phone number!';
+                    }
+                    return null;
+                  },
                   decoration: kTextFieldDecoration.copyWith(
                     hintText: 'Phone Number',
                     hintStyle: TextStyle(color: Colors.black54),
@@ -59,10 +88,17 @@ class LoginFormField extends StatelessWidget {
                 ),
                 SizedBox(height: 18),
                 TextFormField(
+                  controller: controller.passwordController,
                   textAlign: TextAlign.start,
                   keyboardType: TextInputType.visiblePassword,
                   obscureText: !controller.passwordVisible,
                   onChanged: (_) {},
+                  validator: (value) {
+                    if (value!.isEmpty && value.length < 7) {
+                      return 'Invalid password!';
+                    }
+                    return null;
+                  },
                   decoration: kTextFieldDecoration.copyWith(
                     hintText: 'Password',
                     hintStyle: TextStyle(color: Colors.black54),

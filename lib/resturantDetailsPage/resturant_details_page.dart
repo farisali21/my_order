@@ -14,12 +14,15 @@ class RestaurantDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: restaurantDetails(context),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: ListView(
-          children: [
-            RestaurantPhoto(),
-            Row(
+      body: ListView(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: RestaurantPhoto(),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
@@ -32,10 +35,13 @@ class RestaurantDetailsPage extends StatelessWidget {
                 ),
               ],
             ),
-            RestaurantOffer(),
-            FoodTapBar(),
-          ],
-        ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: RestaurantOffer(),
+          ),
+          FoodTapBar(),
+        ],
       ),
     );
   }

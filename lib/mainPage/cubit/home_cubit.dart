@@ -58,4 +58,10 @@ class HomeCubit extends Cubit<HomeState> {
       throw (error);
     }
   }
+
+  @override
+  Future<void> close() {
+    pageControllerFirstOffer.dispose();
+    return super.close();
+  }
 }

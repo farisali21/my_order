@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+
+const baseUrl = 'https://www.inoutdesigners.com/talabat/public/api';
+
 const Color kPrimaryColor = Color(0xffEF4760);
 const Color defaultColor = Color(0xffEF4760);
 const Color kSecondaryColor = Color(0xffF591A0);

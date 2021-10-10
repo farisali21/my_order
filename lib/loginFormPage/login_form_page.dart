@@ -32,24 +32,40 @@ class LoginForm extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(width: 20),
+                  const SizedBox(width: 20),
                   Expanded(
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => MainPage()),
+                    child: BlocConsumer<LoginformCubit, LoginformState>(
+                      listener: (context, state) {
+                        // final controller = LoginformCubit.of(context);
+                        // if (state is LoginFormLoaded) {
+                        //   ScaffoldMessenger.of(context)
+                        //       .showSnackBar(controller.snackBar);
+                        // }
+                      },
+                      builder: (context, state) {
+                        final controller = LoginformCubit.of(context);
+                        return ElevatedButton(
+                          onPressed: () {
+                            if (controller.formKey.currentState!.validate()) {
+                              controller.authenticate();
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    content: Text('Processing Data')),
+                              );
+                            }
+                          },
+                          style: ElevatedButton.styleFrom(
+                              elevation: 4,
+                              primary: Colors.pinkAccent,
+                              padding: EdgeInsets.all(10)),
+                          child: Text(
+                            'Create account',
+                            style: TextStyle(
+                              fontSize: 18,
+                            ),
+                          ),
                         );
                       },
-                      style: ElevatedButton.styleFrom(
-                          elevation: 4,
-                          primary: Colors.pinkAccent,
-                          padding: EdgeInsets.all(10)),
-                      child: Text(
-                        'Create account',
-                        style: TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
                     ),
                   ),
                   SizedBox(width: 20),

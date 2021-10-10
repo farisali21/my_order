@@ -6,14 +6,13 @@ class MealsContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-        child: Column(
+    return Column(
       children: [
         MealsList(),
         MealsList(),
         MealsList(),
         MealsList(),
       ],
-    ));
+    );
   }
 }

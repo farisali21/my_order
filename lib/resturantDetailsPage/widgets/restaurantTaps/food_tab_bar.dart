@@ -8,74 +8,72 @@ class FoodTapBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: DefaultTabController(
-          length: 4,
-          child: Column(
-            children: [
-              TabBar(
-                indicatorWeight: 5,
-                indicatorColor: defaultColor,
-                indicatorSize: TabBarIndicatorSize.label,
-                isScrollable: true,
-                tabs: [
-                  Tab(
-                    child: Text(
-                      'Koshary',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600),
-                    ),
+    return DefaultTabController(
+        length: 4,
+        child: Column(
+          children: [
+            TabBar(
+              indicatorWeight: 5,
+              indicatorColor: defaultColor,
+              indicatorSize: TabBarIndicatorSize.label,
+              isScrollable: true,
+              tabs: [
+                Tab(
+                  child: Text(
+                    'Koshary',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600),
                   ),
-                  Tab(
-                    child: Text(
-                      'Sandwitches',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600),
-                    ),
+                ),
+                Tab(
+                  child: Text(
+                    'Sandwitches',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600),
                   ),
-                  Tab(
-                    child: Text(
-                      'Chinkens',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600),
-                    ),
+                ),
+                Tab(
+                  child: Text(
+                    'Chinkens',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600),
                   ),
-                  Tab(
-                    child: Text(
-                      'All',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600),
-                    ),
+                ),
+                Tab(
+                  child: Text(
+                    'All',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              height: MediaQuery.of(context).size.height,
+              child: TabBarView(
+                children: <Widget>[
+                  MealsContainer(),
+                  Center(
+                    child: Icon(Icons.directions_transit),
+                  ),
+                  Center(
+                    child: Icon(Icons.directions_transit),
+                  ),
+                  Center(
+                    child: Icon(Icons.directions_bike),
                   ),
                 ],
               ),
-              Container(
-                height: 410,
-                child: TabBarView(
-                  children: <Widget>[
-                    MealsContainer(),
-                    Center(
-                      child: Icon(Icons.directions_transit),
-                    ),
-                    Center(
-                      child: Icon(Icons.directions_transit),
-                    ),
-                    Center(
-                      child: Icon(Icons.directions_bike),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          )),
-    );
+            ),
+          ],
+        ));
   }
 }
