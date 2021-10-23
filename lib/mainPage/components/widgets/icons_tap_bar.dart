@@ -1,9 +1,12 @@
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hive/hive.dart';
 import 'package:my_order/constants/constants.dart';
 import 'package:my_order/fastDelivery/fast_delivery_page.dart';
 import 'package:my_order/translations/locale_keys.g.dart';
+
+import '../../../main.dart';
 
 class IconsTapBar extends StatelessWidget {
   const IconsTapBar({
@@ -20,8 +23,9 @@ class IconsTapBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             elevatedButtonMainPage(LocaleKeys.food_button.tr(), () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => FastDeliveryPage()));
+              // Navigator.of(context).push(
+              //     MaterialPageRoute(builder: (context) => FastDeliveryPage()));
+              print(Hive.box(userDetails).get('email'));
             }, Icon(Icons.fastfood)),
             elevatedButtonMainPage(LocaleKeys.gronveries_button.tr(), () {},
                 Icon(Icons.local_grocery_store)),

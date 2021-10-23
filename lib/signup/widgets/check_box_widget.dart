@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_order/loginFormPage/loginFormCubit/loginform_cubit.dart';
+import 'package:my_order/signup/signupCubit/signup_cubit.dart';
 
-Row checkBoxWidget(LoginformCubit controller) {
+Row checkBoxWidget(SignupCubit controller) {
   return Row(
     children: [
       Checkbox(

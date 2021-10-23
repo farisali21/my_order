@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 import 'package:my_order/help/view.dart';
+import 'package:my_order/loginPage/login_page.dart';
+import 'package:my_order/main.dart';
 import 'package:my_order/notifacations/view.dart';
 import 'package:my_order/offers/view.dart';
 import 'package:my_order/translations/locale_keys.g.dart';
@@ -28,7 +31,7 @@ class DrawerItems extends StatelessWidget {
     VouchersPage(),
     HelpPage(),
     MainPage(),
-    MainPage()
+    LoginPage()
   ];
 
   List<Map<String, dynamic>> drawerItemsDetails = [
@@ -94,6 +97,13 @@ class DrawerItems extends StatelessWidget {
           var selected = drawerItemsDetails[index];
           return DrawerSingleItem(
             ontap: () {
+              if (index == 10) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => pages[index]),
+                );
+                Hive.box(userDetails).clear();
+              }
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => pages[index]),

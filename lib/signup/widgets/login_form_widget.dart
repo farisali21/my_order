@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_order/constants/constants.dart';
-import 'package:my_order/loginFormPage/widgets/check_box_widget.dart';
+import 'package:my_order/signup/signupCubit/signup_cubit.dart';
 
-import '../loginFormCubit/loginform_cubit.dart';
+import 'check_box_widget.dart';
 
 class LoginFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LoginformCubit, LoginformState>(
+    return BlocBuilder<SignupCubit, SignupState>(
       builder: (context, state) {
-        final controller = LoginformCubit.of(context);
+        final controller = SignupCubit.of(context);
         return Form(
           key: controller.formKey,
           child: Padding(

@@ -1,5 +1,7 @@
 import 'package:bloc/bloc.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
@@ -18,18 +20,12 @@ class LoginCubit extends Cubit<LoginState> {
 
   final GlobalKey<FormState> formKey = GlobalKey();
   bool passwordVisible = true;
-  late String _accessToken;
-  late int _generalId;
+  late SnackBar snackBar;
+  late String _password;
   late String _firstName;
   late String _lastName;
   late String _email;
   late String _phone;
-  late int _areaId;
-  late String _areaNameEn;
-  late String _areaNameAr;
-  late String _cityNameEn;
-  late String _cityNameAr;
-  SnackBar snackBar = SnackBar(content: Text(''));
   var isLoading = false;
   final passwordController = TextEditingController();
   final emailController = TextEditingController();
@@ -41,27 +37,47 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   Future<void> authenticate() async {
-    final url = '$baseUrl/client/auth/login';
+    emit(ButtonLoading());
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
+    CollectionReference users = firestore.collection('users');
     try {
-      final response = await dio.post(url,
-          data: {
-            'email': emailController.text,
-            'password': passwordController.text,
-          },
-          options: Options(
-            contentType: 'application/json',
-            method: 'POST',
-            validateStatus: (state) => state! < 500,
-          ));
-      final responseData = response.data;
-      Hive.box(userDetails).put('userCerdintial', responseData);
-      UserCredintial.userCredintial = responseData;
-      print(UserCredintial.userCredintial);
-      emit(LoginLoaded());
-    } catch (error, trace) {
-      print(error);
-      print(trace);
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(
+              email: emailController.text, password: passwordController.text);
+
+      final userInformation = await users.doc(userCredential.user!.email).get();
+
+      _firstName = userInformation['first_name'];
+      _lastName = userInformation['last_name'];
+      _email = userInformation['email'];
+      _phone = userInformation['phone'];
+      _password = userInformation['password'];
+      emit(ButtonLoaded());
+
+      Hive.box(userDetails).put('first_name', _lastName);
+      Hive.box(userDetails).put('last_name', _firstName);
+      Hive.box(userDetails).put('email', _email);
+      Hive.box(userDetails).put('phone', _phone);
+      Hive.box(userDetails).put('password', _password);
+    } on FirebaseAuthException catch (e) {
+      var errorMessage = 'Authentication failed';
+      if (e.code == 'user-not-found') {
+        errorMessage = 'No user found for that email.';
+        print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        print('Wrong password provided for that user.');
+        errorMessage = 'Wrong password provided for that user.';
+      }
+      snackBar = SnackBar(content: Text(errorMessage));
+      emit(LoginError());
     }
+  }
+
+  @override
+  Future<void> close() {
+    passwordController.dispose();
+    emailController.dispose();
+    return super.close();
   }
 }
 

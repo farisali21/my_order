@@ -5,18 +5,20 @@ import 'package:flutter/material.dart';
 import 'package:my_order/forgottenPassword/forgotten_password_page.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:my_order/signup/SignupPage.dart';
 
-import 'loginFormPage/login_form_page.dart';
 import 'loginPage/login_page.dart';
 import 'splashScreen/splashView.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 // part 'main.g.dart';
 const userDetails = 'userDetails';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  await Firebase.initializeApp();
   await Hive.initFlutter();
-  await Hive.openBox<String>(userDetails);
+  await Hive.openBox(userDetails);
   runApp(
     EasyLocalization(
         supportedLocales: [Locale('en'), Locale('ar')],

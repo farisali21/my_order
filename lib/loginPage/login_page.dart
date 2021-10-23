@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_order/checkOutOrderPage/widgets/components/app_bar_check_out.dart';
 import 'package:my_order/constants/constants.dart';
 import 'package:my_order/loginPage/cubit/login_cubit.dart';
+import 'package:my_order/mainPage/view.dart';
 
 import 'widgets/forget_create_account.dart';
 
@@ -93,9 +94,19 @@ class LoginPage extends StatelessWidget {
                         onPressed: () {
                           if (controller.formKey.currentState!.validate()) {
                             controller.authenticate();
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(content: Text('Processing Data')),
-                            );
+                            state is ButtonLoading
+                                ? Center(
+                                    child: CircularProgressIndicator(),
+                                  )
+                                : state is LoginError
+                                    ? ScaffoldMessenger.of(context)
+                                        .showSnackBar(
+                                        controller.snackBar,
+                                      )
+                                    : Navigator.of(context).pushReplacement(
+                                        MaterialPageRoute(
+                                            builder: (context) => MainPage()),
+                                      );
                           }
                         },
                         child: const Text('Login'),

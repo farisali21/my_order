@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "789758942394",
+    "project_id": "my-order-food-app",
+    "storage_bucket": "my-order-food-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:789758942394:android:95fdd778a70615a95ab683",
+        "android_client_info": {
+          "package_name": "com.faris_in_out.my_order"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "789758942394-r07n7t12qs20r4roogfq7kpkt58eb42r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbnOKNob0Gnh2oJmnneTncu3aMVbyNo9o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "789758942394-r07n7t12qs20r4roogfq7kpkt58eb42r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

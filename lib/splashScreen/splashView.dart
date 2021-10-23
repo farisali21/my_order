@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:my_order/chooseLocation/view.dart';
 import 'package:my_order/core/user_credintial.dart';
-import 'package:my_order/loginFormPage/login_form_page.dart';
 import 'package:my_order/loginPage/login_page.dart';
 import 'package:my_order/main.dart';
+import 'package:my_order/mainPage/view.dart';
 import 'package:my_order/models/auth_model.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -21,17 +21,13 @@ class _SplashScreenState extends State<SplashScreen> {
 
   startApp() async {
     await Future.delayed(Duration(seconds: 2));
-    // if (Hive.box(userDetails).containsKey('userCerdintial')) {
-    //   UserCredintial.userCredintial =
-    //       AuthModel.fromJson(Hive.box(userDetails).get('userCerdintial'));
-    //   Navigator.pushReplacement(
-    //       context, MaterialPageRoute(builder: (context) => ChooseLocation()));
-    // }
-    // Navigator.pushReplacement(
-    //     context, MaterialPageRoute(builder: (context) => LoginPage()));
-    // // Hive.box(userDetails).delete('userCerdintial');
+    if (Hive.box(userDetails).containsKey('email')) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => ChooseLocation()));
+      return;
+    }
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => ChooseLocation()));
+        context, MaterialPageRoute(builder: (context) => LoginPage()));
   }
 
   @override

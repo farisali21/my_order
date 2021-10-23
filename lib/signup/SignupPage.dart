@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_order/component/error_component.dart';
+import 'package:my_order/loginPage/cubit/login_cubit.dart';
 import 'package:my_order/mainPage/view.dart';
+import 'package:my_order/signup/signupCubit/signup_cubit.dart';
 import 'package:my_order/widegts/app_bar.dart';
 
-import 'loginFormCubit/loginform_cubit.dart';
 import 'widgets/login_form_widget.dart';
 
-class LoginForm extends StatelessWidget {
-  const LoginForm({Key? key}) : super(key: key);
+class SignupPage extends StatelessWidget {
+  const SignupPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => LoginformCubit(),
+      create: (context) => SignupCubit(),
       child: Scaffold(
         appBar: loginAppBar([SizedBox()], 'Welcom to Wasly', () {}),
         body: SingleChildScrollView(
@@ -34,7 +36,7 @@ class LoginForm extends StatelessWidget {
                 children: [
                   const SizedBox(width: 20),
                   Expanded(
-                    child: BlocConsumer<LoginformCubit, LoginformState>(
+                    child: BlocConsumer<SignupCubit, SignupState>(
                       listener: (context, state) {
                         // final controller = LoginformCubit.of(context);
                         // if (state is LoginFormLoaded) {
@@ -43,15 +45,24 @@ class LoginForm extends StatelessWidget {
                         // }
                       },
                       builder: (context, state) {
-                        final controller = LoginformCubit.of(context);
+                        final controller = SignupCubit.of(context);
                         return ElevatedButton(
                           onPressed: () {
                             if (controller.formKey.currentState!.validate()) {
                               controller.authenticate();
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                    content: Text('Processing Data')),
-                              );
+                              state is SingupLoading
+                                  ? Center(
+                                      child: CircularProgressIndicator(),
+                                    )
+                                  : state is ButtonLoaded
+                                      ? ScaffoldMessenger.of(context)
+                                          .showSnackBar(controller.snackBar)
+                                      : ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                          SnackBar(
+                                            content: Text('Navigate'),
+                                          ),
+                                        );
                             }
                           },
                           style: ElevatedButton.styleFrom(
